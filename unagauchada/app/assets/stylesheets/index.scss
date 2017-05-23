@@ -1,3 +1,26 @@
 // Place all the styles related to the index controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+* {
+	margin: 0px;
+	padding: 0px;
+}
+#portada{
+	background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1R6r1K4D6aOHrBnErUXtJdeyntw6925wyNDdtA6q6aBBtWl5yeg");
+	background-size:100%;
+	background-repeat: no-repeat;
+
+
+}
+#portada img{
+	width: 100%
+}
+#barra_principal{
+	width:100%;
+	background-color: rgba(0, 0, 0, 0.76); 
+	position: fixed;
+}
+.titulos_sesion{
+margin-top:  0px;
+
+}

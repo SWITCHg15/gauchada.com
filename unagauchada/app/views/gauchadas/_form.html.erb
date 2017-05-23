@@ -1,0 +1,48 @@
+<%= form_for(gauchada) do |f| %>
+  <% if gauchada.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(gauchada.errors.count, "error") %> prohibited this gauchada from being saved:</h2>
+
+      <ul>
+      <% gauchada.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre %>
+    <%= f.text_field :nombre %>
+  </div>
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= f.label :descripcion %>
+    <%= f.text_area :descripcion %>
+  </div>
+
+
+  <div class="field">
+    <%= f.label :estado %>
+    <%= f.text_field :estado %>
+  </div>
+
+  <div class="field">
+    <%= f.label :fecha_de_inicio %>
+    <%= f.date_select :fecha_de_inicio %>
+  </div>
+
+  <div class="field">
+    <%= f.label :fecha_limite %>
+    <%= f.date_select :fecha_limite %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

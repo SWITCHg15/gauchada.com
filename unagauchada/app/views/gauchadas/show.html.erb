@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @gauchada.nombre %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @gauchada.title %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @gauchada.descripcion %>
+</p>
+
+
+<p>
+  <strong>Estado:</strong>
+  <%= @gauchada.estado %>
+</p>
+
+<p>
+  <strong>Fecha de inicio:</strong>
+  <%= @gauchada.fecha_de_inicio %>
+</p>
+
+<p>
+  <strong>Fecha limite:</strong>
+  <%= @gauchada.fecha_limite %>
+</p>
+
+<%= link_to 'Edit', edit_gauchada_path(@gauchada) %> |
+<%= link_to 'Back', gauchadas_path %>

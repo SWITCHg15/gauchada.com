@@ -3,9 +3,6 @@ class ApplicationController < ActionController::Base
   #Damos permiso para traer los datos del usuario para poder editarlo
   before_filter :configure_permitted_parameters, if: :devise_controller?
   	protected
-  	
-
-
   	def configure_permitted_parameters
   		devise_parameter_sanitizer.permit(:sign_up) do |user_params|
     	user_params.permit({ roles: [] }, :nombre, :email, :password, :password_confirmation, :apellido, :telefono, :fecha_de_nacimiento) 

@@ -1,0 +1,2 @@
+class Gauchada < ApplicationRecord
+end
