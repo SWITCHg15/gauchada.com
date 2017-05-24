@@ -1,6 +1,6 @@
 class GauchadasController < ApplicationController
   before_action :set_gauchada, only: [:show, :edit, :update, :destroy]
-
+  before_action :authenticate_user!, except: [:index,:show]
   # GET /gauchadas
   # GET /gauchadas.json
   def index
@@ -24,7 +24,7 @@ class GauchadasController < ApplicationController
   # POST /gauchadas
   # POST /gauchadas.json
   def create
-    @gauchada = Gauchada.new(gauchada_params)
+    @gauchada = current_user.gauchadas.new(gauchada_params)
 
     respond_to do |format|
       if @gauchada.save
@@ -69,6 +69,6 @@ class GauchadasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def gauchada_params
-      params.require(:gauchada).permit(:nombre, :title, :descripcion, :estado, :fecha_de_inicio, :fecha_limite)
+      params.require(:gauchada).permit(:nombre, :title, :descripcion, :estado, :fecha_de_inicio, :fecha_limite, :cover)
     end
 end

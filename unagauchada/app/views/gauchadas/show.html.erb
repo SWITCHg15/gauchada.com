@@ -30,6 +30,11 @@
   <strong>Fecha limite:</strong>
   <%= @gauchada.fecha_limite %>
 </p>
-
+<p>
+ <strong>Imagen</strong>
+ <div class="field">
+ <%= image_tag @gauchada.cover.url() %>
+ </div>
+</p>
 <%= link_to 'Edit', edit_gauchada_path(@gauchada) %> |
 <%= link_to 'Back', gauchadas_path %>
