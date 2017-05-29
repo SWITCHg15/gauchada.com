@@ -45,7 +45,10 @@
     <%= f.label "Contraseña Actual" %> <i>(Necesitamos su contraseña actual para confirmar sus cambios)</i><br />
     <%= f.password_field :current_password, autocomplete: "off" %>
   </div>
-
+   <div class="field">
+  <%= f.label "Imagen" %> <br />
+ <%= f.file_field :cover %>
+  </div>
   <div class="actions">
     <%= f.submit "Actualizar" %>
   </div>

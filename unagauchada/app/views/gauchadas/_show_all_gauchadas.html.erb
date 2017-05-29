@@ -1,0 +1,21 @@
+<article class="lista_gacuchadas">
+    <% @gauchadas.each do |gauchada| %>
+    <div class="contenedor_guchada">
+    <h2 class="titulo_gauchadas"><%= gauchada.title %></h2>
+    <div class="imagen_gauchadas">
+      <%= image_tag gauchada.cover.url('thumb') %>
+    </div>
+    <p class="descripcion_gauchadas"><%= gauchada.descripcion %></p>
+    <strong><p class="fecha_limite_gauchada">Fecha limite: <%= gauchada.fecha_limite %></p></strong>
+    <div class="clear_gauchadas">
+    <%= link_to 'Ver ', gauchada, :class => "link_gauchadas" %>
+    <%= link_to 'Editar', edit_gauchada_path(gauchada), :class => "link_gauchadas" %>
+    <%= link_to 'Eliminar', gauchada, :class => "link_gauchadas", method: :delete, data: { confirm: '¿Estas seguro?' } %>
+    <p class="by_autor" >Por: <a  href="#"><%= gauchada.user.nombre %> <%= gauchada.user.apellido %></a>
+    </p>
+    </div> 
+    </div>
+    <% end %>
+  </article> 
+
+<br>

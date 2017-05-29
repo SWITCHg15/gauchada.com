@@ -1,3 +1,37 @@
 // Place all the styles related to the Gauchadas controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.home_gauchadas {
+	width: 75%;
+	margin: auto;
+
+}
+.titulo_gauchadas{
+color: #f27321;
+}
+	
+.imagen_gauchadas{
+	float: left;
+	margin-right: 1%
+}
+.descripcion_gauchadas:first-letter{
+	float: left;	
+}
+.clear_gauchadas{
+	clear: both;
+	margin-top: 5% !important;
+}
+.by_autor{
+	text-align: right;
+	
+}
+.by_autor a, .link_gauchadas{
+	color: #f27321 !important;
+}
+.contenedor_guchada{
+	border: solid 1px #ccc ;
+	padding: 1%;
+	margin-bottom: 1%;
+	box-shadow: 1px 2px 3px 4px;
+}

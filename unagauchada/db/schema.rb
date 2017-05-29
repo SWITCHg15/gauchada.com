@@ -10,12 +10,38 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170524023741) do
+ActiveRecord::Schema.define(version: 20170525041752) do
 
   create_table "categoria", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "nombre"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "ciudads", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "nombre"
+    t.string   "provincia"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "comentarios", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.date     "fecha"
+    t.text     "texto",      limit: 65535
+    t.date     "hora"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+  end
+
+  create_table "compras", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "cantidad"
+    t.float    "precio",        limit: 24
+    t.date     "fecha"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.float    "precio_actual", limit: 24
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_compras_on_user_id", using: :btree
   end
 
   create_table "creditos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -41,6 +67,31 @@ ActiveRecord::Schema.define(version: 20170524023741) do
     t.index ["user_id"], name: "index_gauchadas_on_user_id", using: :btree
   end
 
+  create_table "postularses", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.boolean  "aprobado"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "user_id"
+    t.integer  "gauchada_id"
+    t.index ["gauchada_id"], name: "index_postularses_on_gauchada_id", using: :btree
+    t.index ["user_id"], name: "index_postularses_on_user_id", using: :btree
+  end
+
+  create_table "reputacions", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "nombre"
+    t.integer  "inicio"
+    t.integer  "fin"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "tarjeta", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "numero"
+    t.float    "credito",    limit: 24
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
+
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: "",    null: false
@@ -63,9 +114,17 @@ ActiveRecord::Schema.define(version: 20170524023741) do
     t.string   "cover_content_type"
     t.integer  "cover_file_size"
     t.datetime "cover_updated_at"
+    t.integer  "creditos",               default: 1
+    t.integer  "clalificacion",          default: 1
+    t.integer  "reputacion_id"
     t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
+    t.index ["reputacion_id"], name: "index_users_on_reputacion_id", using: :btree
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "compras", "users"
   add_foreign_key "gauchadas", "users"
+  add_foreign_key "postularses", "gauchadas"
+  add_foreign_key "postularses", "users"
+  add_foreign_key "users", "reputacions"
 end

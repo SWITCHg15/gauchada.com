@@ -1,3 +1,8 @@
 <section id="portada"><img src="/assets/Portada.png"></div></section>
 
-<section></section>
+<section class="home_gauchadas">
+<h1>Últimas gauchadas</h1>
+  <%= @gauchadas = Gauchada.all 
+   render 'gauchadas/show_all_gauchadas'  %>
+    
+</section>

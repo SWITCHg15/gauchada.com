@@ -19,8 +19,27 @@
 	width:100%;
 	background-color: rgba(0, 0, 0, 0.76); 
 	position: fixed;
+	border: none;
+
+}
+#barra_principal *  {
+	color: #f27321 !important;
+
+}
+.dropdown-menu :hover{
+background-color: transparent;
+font-weight: bold !important;
+}
+
+.dropdown-menu{
+	background-color: rgba(0, 0, 0, 0.76) !important;
+	border: none !important	
 }
 .titulos_sesion{
 margin-top:  0px;
 
+}
+.titulos_gauchadas{
+
+	margin: 0px auto 10px auto !important;
 }

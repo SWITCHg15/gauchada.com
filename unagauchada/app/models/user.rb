@@ -11,4 +11,6 @@ class User < ApplicationRecord
 
   #un usuario se postula a muchas gauchadas.
   has_many :gauchadas
+  has_many :compras
+  belongs_to :reputacion
 end
