@@ -41,7 +41,7 @@ class BuysController < ApplicationController
             
             respond_to do |format|
               if @buy.save and current_user.save and @tarjeta.save
-                format.html { redirect_to @buy, notice: 'Buy was successfully created.' }
+                format.html { redirect_to @buy, notice: 'Se ha realizado la compra con éxito.' }
                 format.json { render :show, status: :created, location: @buy }
               else
                 format.html { render :new }
@@ -49,8 +49,9 @@ class BuysController < ApplicationController
               end
             end
       else
-
-    
+        respond_to do |format|
+          format.html { redirect_to '/buys/new', notice: 'Tarjeta invalida o crédito insuficiente.' }
+        end
       end
   end
 end

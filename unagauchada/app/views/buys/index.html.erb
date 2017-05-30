@@ -21,8 +21,8 @@
         <td><%= buy.precio_actual %></td>
         <td><%= buy.fecha %></td>
         <td><%= link_to 'Show', buy %></td>
-        <td><%= link_to 'Edit', edit_buy_path(buy) %></td>
-        <td><%= link_to 'Destroy', buy, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <!--<td><%= link_to 'Edit', edit_buy_path(buy) %></td>
+        <td><%= link_to 'Destroy', buy, method: :delete, data: { confirm: 'Are you sure?' } %></td> -->
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +30,4 @@
 
 <br>
 
-<%= link_to 'New Buy', new_buy_path %>
+<%= link_to 'Nueva compra', new_buy_path %>

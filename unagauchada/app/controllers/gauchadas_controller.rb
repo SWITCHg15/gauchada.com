@@ -49,6 +49,10 @@
           format.json { render json: @gauchada.errors, status: :unprocessable_entity }
         end
       end
+    else
+      respond_to do |format|
+        format.html { redirect_to '/buys/new', notice: 'Ud no posee credito para realizar la compra.' }
+      end
     end
   end
 
