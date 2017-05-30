@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
+  resources :buys
   resources :categoria
   resources :gauchadas
+  
   get 'index/index'
 
   devise_for :users
@@ -8,7 +10,7 @@ Rails.application.routes.draw do
   #ruta de inicio devise
   root to: "index#index"
   #resources :menu 
-  get 'tarjetum/tarjetum'
-  post 'tarjetum/tarjetum'
-  
+  get "postularse/new"
+  post "postularse/create"
+  get "postularse/:id" => "postularse#show", :as => :post
 end

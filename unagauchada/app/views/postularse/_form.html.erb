@@ -1,0 +1,15 @@
+
+<%= form_for(postularse, :url => {:action => "create"}) do |f| %>
+  
+<br><br><br>
+  <div class="field">
+    <%= f.label :descripcion %>
+    <%= f.text_area :descripcion, :required => true %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  <div class="id_gauchada" style='display:none'>
+  	<%= f.text_area :gauchada_id, :value => @id_gauchada %>
+  </div>
+<% end %>

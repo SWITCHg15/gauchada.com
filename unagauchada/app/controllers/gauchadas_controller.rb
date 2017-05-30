@@ -1,4 +1,4 @@
-class GauchadasController < ApplicationController
+  class GauchadasController < ApplicationController
   before_action :set_gauchada, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!, except: [:index,:show]
   # GET /gauchadas
@@ -15,24 +15,34 @@ class GauchadasController < ApplicationController
   # GET /gauchadas/new
   def new
     @gauchada = Gauchada.new
+    
   end
 
   # GET /gauchadas/1/edit
   def edit
+    if @gauchada.cant_postulantes > 0
+      respond_to do |format|
+        format.html { redirect_to @gauchada, notice: 'No se puede editar porque hay postulantes pendientes.' }
+      end
+    end
   end
 
   # POST /gauchadas
   # POST /gauchadas.json
   def create
-    @gauchada = current_user.gauchadas.new(gauchada_params)
+    if current_user.creditos >= 1
+      @gauchada = current_user.gauchadas.new(gauchada_params)
 
-    respond_to do |format|
-      if @gauchada.save
-        format.html { redirect_to @gauchada, notice: 'Gauchada was successfully created.' }
-        format.json { render :show, status: :created, location: @gauchada }
-      else
-        format.html { render :new }
-        format.json { render json: @gauchada.errors, status: :unprocessable_entity }
+      respond_to do |format|
+        if @gauchada.save
+          @credito=current_user.creditos - 1
+          current_user.update_column(:creditos, @credito )
+          format.html { redirect_to @gauchada, notice: 'Gauchada Creada con éxito.' }
+          format.json { render :show, status: :created, location: @gauchada }
+        else
+          format.html { render :new }
+          format.json { render json: @gauchada.errors, status: :unprocessable_entity }
+        end
       end
     end
   end
@@ -54,10 +64,16 @@ class GauchadasController < ApplicationController
   # DELETE /gauchadas/1
   # DELETE /gauchadas/1.json
   def destroy
-    @gauchada.destroy
-    respond_to do |format|
-      format.html { redirect_to gauchadas_url, notice: 'Gauchada was successfully destroyed.' }
-      format.json { head :no_content }
+    if @gauchada.cant_postulantes > 0
+      respond_to do |format|
+        format.html { redirect_to @gauchada, notice: 'No se puede eliminar porque hay postulantes.' }
+      end
+    else
+      @gauchada.destroy
+      respond_to do |format|
+        format.html { redirect_to gauchadas_url, notice: 'Gauchada was successfully destroyed.' }
+        format.json { head :no_content }
+      end
     end
   end
 
@@ -69,6 +85,6 @@ class GauchadasController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def gauchada_params
-      params.require(:gauchada).permit(:nombre, :title, :descripcion, :estado, :fecha_de_inicio, :fecha_limite, :cover)
+      params.require(:gauchada).permit(:nombre, :title, :descripcion, :estado, :fecha_de_inicio, :fecha_limite, :cover, :ciudad)
     end
 end

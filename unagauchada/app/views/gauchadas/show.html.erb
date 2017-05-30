@@ -25,15 +25,27 @@
   <strong>Fecha de inicio:</strong>
   <%= @gauchada.fecha_de_inicio %>
 </p>
-
+<p>
+   <strong>Ciudad:</strong>
+   <%= @gauchada.ciudad %>
+</p>
+<p>
+   <strong>Cantidad de postulantes:</strong>
+   <%= @gauchada.cant_postulantes %>
+</p>
 <p>
   <strong>Fecha limite:</strong>
   <%= @gauchada.fecha_limite %>
 </p>
+
 <p>
  <strong>Imagen</strong>
  <div class="field">
- <%= image_tag @gauchada.cover.url() %>
+ <% if @gauchada.cover_file_size.nil? %>
+ <img src="/assets/avatar.png">
+ <% else %>
+ <%= image_tag @gauchada.cover.url('medium') %>
+ <% end %>
  </div>
 </p>
 <%= link_to 'Edit', edit_gauchada_path(@gauchada) %> |

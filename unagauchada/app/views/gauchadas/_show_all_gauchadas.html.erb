@@ -1,16 +1,39 @@
 <article class="lista_gacuchadas">
+    <%= link_to 'Ordenar por titulo', 'gauchadas/show_all_gauchadas'%>
+    <%= link_to 'Ordenar cronolgimente', 'gauchadas/show_all_gauchadas' %>
+    <%= link_to 'Ordenar cantidad postulantes', 'gauchadas/show_all_gauchadas' %>
+
+
+
+
     <% @gauchadas.each do |gauchada| %>
     <div class="contenedor_guchada">
     <h2 class="titulo_gauchadas"><%= gauchada.title %></h2>
     <div class="imagen_gauchadas">
-      <%= image_tag gauchada.cover.url('thumb') %>
+    <% if gauchada.cover_file_size.nil? %>
+            <img src="assets/avatar.png">
+        <% else %>
+            <%= image_tag gauchada.cover.url('thumb') %>
+        <% end %>
     </div>
     <p class="descripcion_gauchadas"><%= gauchada.descripcion %></p>
-    <strong><p class="fecha_limite_gauchada">Fecha limite: <%= gauchada.fecha_limite %></p></strong>
+    <strong>
+    <br>
+    <p>Postulados: <%= gauchada.cant_postulantes
+     %></p>
+    <p>Ciudad: <%= gauchada.ciudad %></p>
+    <p class="fecha_limite_gauchada">Fecha limite: <%= gauchada.fecha_limite %></p></strong>
     <div class="clear_gauchadas">
     <%= link_to 'Ver ', gauchada, :class => "link_gauchadas" %>
-    <%= link_to 'Editar', edit_gauchada_path(gauchada), :class => "link_gauchadas" %>
-    <%= link_to 'Eliminar', gauchada, :class => "link_gauchadas", method: :delete, data: { confirm: '¿Estas seguro?' } %>
+    <% if user_signed_in? %>
+        <% if current_user.id == gauchada.user.id %>
+            <%= link_to 'Editar', edit_gauchada_path(gauchada), :class => "link_gauchadas" %>
+            <%= link_to 'Eliminar', gauchada, :class => "link_gauchadas", method: :delete, data: { confirm: '¿Estas seguro?' } %>
+        <% end %>
+    <% end %>
+    <%= link_to 'Postularse', {controller:"postularse", action:"new", id_gauchada: gauchada.id}, :class => "link_gauchadas"%>
+    <%=  
+   render 'postularse/show'  %>
     <p class="by_autor" >Por: <a  href="#"><%= gauchada.user.nombre %> <%= gauchada.user.apellido %></a>
     </p>
     </div> 

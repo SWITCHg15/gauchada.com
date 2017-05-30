@@ -10,7 +10,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170525041752) do
+ActiveRecord::Schema.define(version: 20170529083949) do
+
+  create_table "buys", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "cantidad"
+    t.float    "precio_total",      limit: 24
+    t.float    "precio_actual",     limit: 24
+    t.date     "fecha"
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.integer  "user_id"
+    t.integer  "numero_de_tarjeta"
+    t.index ["user_id"], name: "index_buys_on_user_id", using: :btree
+  end
+
+  create_table "cards", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "numero"
+    t.float    "credito",    limit: 24
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
 
   create_table "categoria", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "nombre"
@@ -33,17 +52,6 @@ ActiveRecord::Schema.define(version: 20170525041752) do
     t.datetime "updated_at",               null: false
   end
 
-  create_table "compras", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "cantidad"
-    t.float    "precio",        limit: 24
-    t.date     "fecha"
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-    t.float    "precio_actual", limit: 24
-    t.integer  "user_id"
-    t.index ["user_id"], name: "index_compras_on_user_id", using: :btree
-  end
-
   create_table "creditos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "total_de_creditos"
     t.datetime "created_at",        null: false
@@ -57,13 +65,15 @@ ActiveRecord::Schema.define(version: 20170525041752) do
     t.string   "estado"
     t.date     "fecha_de_inicio"
     t.date     "fecha_limite"
-    t.datetime "created_at",                       null: false
-    t.datetime "updated_at",                       null: false
+    t.datetime "created_at",                                   null: false
+    t.datetime "updated_at",                                   null: false
     t.integer  "user_id"
     t.string   "cover_file_name"
     t.string   "cover_content_type"
     t.integer  "cover_file_size"
     t.datetime "cover_updated_at"
+    t.string   "ciudad"
+    t.integer  "cant_postulantes",                 default: 0
     t.index ["user_id"], name: "index_gauchadas_on_user_id", using: :btree
   end
 
@@ -73,6 +83,7 @@ ActiveRecord::Schema.define(version: 20170525041752) do
     t.datetime "updated_at",  null: false
     t.integer  "user_id"
     t.integer  "gauchada_id"
+    t.string   "descripcion"
     t.index ["gauchada_id"], name: "index_postularses_on_gauchada_id", using: :btree
     t.index ["user_id"], name: "index_postularses_on_user_id", using: :btree
   end
@@ -83,13 +94,6 @@ ActiveRecord::Schema.define(version: 20170525041752) do
     t.integer  "fin"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-  end
-
-  create_table "tarjeta", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "numero"
-    t.float    "credito",    limit: 24
-    t.datetime "created_at",            null: false
-    t.datetime "updated_at",            null: false
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -122,7 +126,7 @@ ActiveRecord::Schema.define(version: 20170525041752) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
-  add_foreign_key "compras", "users"
+  add_foreign_key "buys", "users"
   add_foreign_key "gauchadas", "users"
   add_foreign_key "postularses", "gauchadas"
   add_foreign_key "postularses", "users"

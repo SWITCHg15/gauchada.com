@@ -1,7 +1,10 @@
 <br><br><br>
 <h1 class="titulos_gauchadas">Gauchadas</h1>
+<br>
+
 
 <%= @gauchadas = Gauchada.all 
    render 'gauchadas/show_all_gauchadas'  %>
+
 <%= link_to 'Nueva gauchada', new_gauchada_path %>
 <p id="notice"><%= notice %></p>
