@@ -7,7 +7,7 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
     </button>
-    <a class="navbar-brand" href="/"><img src="/assets/avatar.png" style="width:40px;height: 40px;"></a>
+    <a class="navbar-brand" href="/"><img src="/assets/avatar.png" style="width:30px;height: 30px;"></a>
   </div>
  
   <!-- Agrupar los enlaces de navegación, los formularios y cualquier
@@ -22,17 +22,17 @@
           <li><a href="/">Inicio</a></li>
           <li><a href="/gauchadas">Todas las Gauchadas</a></li>
           <li><a href="/buys/new">Comprar crédito</a></li>
-          <li><a href="#">Acción #4</a></li>
-          <li><a href="#">Acción #5</a></li>
+          <li><a href="/gauchadas/new">Nueva gauchada</a></li>
+          
         </ul>
       </li>
     </ul>
 <p class="navbar-text pull-right">
       <% if user_signed_in? %>
         <% if current_user.cover_file_size.nil?  %>
-          <img src="/assets/descarga.png">
+          <img src="/assets/descarga.png" class="foto_menu">
         <% else %>
-          <%= image_tag current_user.cover.url(:mini) %>
+          <%= image_tag current_user.cover.url(:mini), :class => 'foto_menu' %>
          <% end %>
         <strong><%= current_user.nombre+" "+current_user.apellido %></strong> <img src="/assets/credito.png"> <strong>$<%= current_user.creditos %></strong> .
       <%= link_to 'Editar perfil', edit_user_registration_path, :class => 'navbar-link' %> |
@@ -42,5 +42,7 @@
         <%= link_to "Iniciar sesión", new_user_session_path, :class => 'navbar-link'  %>
       <% end %>
       </p>
+
+              
     </div>
 </nav>

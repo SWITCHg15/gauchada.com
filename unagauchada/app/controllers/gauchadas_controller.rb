@@ -4,7 +4,12 @@
   # GET /gauchadas
   # GET /gauchadas.json
   def index
+    @keyword = params[:buscar]
+    if @keyword
+      @gauchadas=Gauchada.where("titulo LIKE (?)", "%#{@keyword}%") 
+    else
     @gauchadas = Gauchada.all
+    end
   end
 
   # GET /gauchadas/1
@@ -69,6 +74,9 @@
         format.html { redirect_to @gauchada, notice: 'No se puede eliminar porque hay postulantes.' }
       end
     else
+      @user=@gauchada.user
+      @user.creditos= @user.creditos + 1
+      @user.save
       @gauchada.destroy
       respond_to do |format|
         format.html { redirect_to gauchadas_url, notice: 'Gauchada was successfully destroyed.' }
@@ -85,6 +93,6 @@
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def gauchada_params
-      params.require(:gauchada).permit(:nombre, :title, :descripcion, :estado, :fecha_de_inicio, :fecha_limite, :cover, :ciudad)
+      params.require(:gauchada).permit(:nombre, :title, :descripcion, :estado, :fecha_de_inicio, :fecha_limite, :cover, :ciudad,:buscar)
     end
 end

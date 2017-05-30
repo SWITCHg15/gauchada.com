@@ -11,19 +11,16 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :nombre %>
-    <%= f.text_field :nombre %>
-  </div>
+ 
 
   <div class="field">
     <%= f.label :title %>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, :required => true %>
   </div>
 
   <div class="field">
     <%= f.label :descripcion %>
-    <%= f.text_area :descripcion %>
+    <%= f.text_area :descripcion, :required => true %>
   </div>
   <div class="field">
   <%= f.label "Imagen" %> <br />
@@ -31,22 +28,18 @@
   </div>
   <div class="field">
     <%= f.label :ciudad %>
-    <%= f.text_field :ciudad %>
+    <%= f.text_field :ciudad, :required => true %>
   </div>
 
-  <div class="field">
-    <%= f.label :estado %>
-    <%= f.text_field :estado %>
-  </div>
 
   <div class="field">
     <%= f.label :fecha_de_inicio %>
-    <%= f.date_select :fecha_de_inicio %>
+    <%= f.date_select :fecha_de_inicio, :required => true%>
   </div>
 
   <div class="field">
     <%= f.label :fecha_limite %>
-    <%= f.date_select :fecha_limite %>
+    <%= f.date_select :fecha_limite, :required => true %>
   </div>
 
   <div class="actions">
