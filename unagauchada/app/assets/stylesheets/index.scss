@@ -36,10 +36,29 @@ font-weight: bold !important;
 	border: none !important	
 }
 .titulos_sesion{
-margin-top:  0px;
+display:block;
+margin:auto;
+margin-top:  20px;
+text-align: center;
 
 }
 .titulos_gauchadas{
 
 	margin: 0px auto 10px auto !important;
 }
+body {
+    background-color: #fafafa;
+    background: url("/assets/fondoo.jpg")  !important ;
+    background-repeat: no-repeat !important;
+    background-size: 100% 100% !important;
+}  
+footer { text-align: center; 
+         margin-top: 8em; 
+         background-color: #D8D8D8; 
+         padding-bottom: 2em; 
+         color: #848484; 
+         font-size: 1em }
+
+footer img { float: center; 
+             position: relative; 
+             margin-top: -4.2em}

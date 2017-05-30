@@ -1,5 +1,6 @@
-<h2>Editar Usuario</h2>
-
+<br><br><br>
+<h2 class="titulos_sesion">Editar Usuario</h2>
+<div class="form-group" id="id_editar">
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
   <div class="field">
@@ -54,8 +55,7 @@
   </div>
 <% end %>
 
-<h3>Cancelar mi cuenta</h3>
 
-<p> <%= button_to "Cancelar mi cuenta", registration_path(resource_name), data: { confirm: "Esta seguro?" }, method: :delete %></p>
 
 <%= link_to "Atras", :back %>
+</div>

@@ -29,10 +29,10 @@ class BuysController < ApplicationController
     @numero= @buy.numero_de_tarjeta 
     #@tarjeta=@tarjetas.first
     @tarjeta = @tarjetas.find_by(numero: @numero)
-    @precio_total= @buy.cantidad * 10
+    @precio_total= @buy.cantidad * 50
     unless @tarjeta.nil?
       if @tarjeta.credito >= @precio_total
-            @buy.precio_actual=10
+            @buy.precio_actual=50
             @buy.precio_total=@precio_total
             @tarjeta.credito= @tarjeta.credito - @precio_total 
             
@@ -48,11 +48,15 @@ class BuysController < ApplicationController
                 format.json { render json: @buy.errors, status: :unprocessable_entity }
               end
             end
+        else
+          respond_to do |format|
+          format.html { redirect_to '/buys/new', notice: 'Crédito insuficiente.' }
+        end
+        end
       else
         respond_to do |format|
-          format.html { redirect_to '/buys/new', notice: 'Tarjeta invalida o crédito insuficiente.' }
-        end
-      end
+        format.html { redirect_to '/buys/new', notice: 'Tarjeta invalida.' }
+       end
   end
 end
   # PATCH/PUT /buys/1

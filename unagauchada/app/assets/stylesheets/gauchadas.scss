@@ -34,4 +34,34 @@ color: #f27321;
 	padding: 1%;
 	margin-bottom: 1%;
 	box-shadow: 1px 2px 3px 4px;
+	background:#fafafa !important;
+}
+.show_gauchada{
+	width: 40%;
+	margin: auto;
+	margin-top: 20px;
+	border:2px #ccc solid;
+	box-shadow: 1px 2px 3px 4px;
+	padding: 2%;
+	background-color: #fafafa ;
+}
+.title_gauchada{
+
+	text-align: center;
+	margin-bottom: 20px;
+}
+.postulantes_gauchada{
+	text-align: right;
+}
+.imagen_gauchada{
+	margin-bottom: 20px;
+	text-align: center;
+}
+.descripcion_gauchada{
+	padding: 3%;
+	
+	border: 0.1px solid #ccc;
+}
+.autor_gauchada{
+	text-align: right;
 }

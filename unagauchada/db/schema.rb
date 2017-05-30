@@ -52,6 +52,17 @@ ActiveRecord::Schema.define(version: 20170529083949) do
     t.datetime "updated_at",               null: false
   end
 
+  create_table "compras", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "cantidad"
+    t.float    "precio",        limit: 24
+    t.date     "fecha"
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.float    "precio_actual", limit: 24
+    t.integer  "user_id"
+    t.index ["user_id"], name: "index_compras_on_user_id", using: :btree
+  end
+
   create_table "creditos", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "total_de_creditos"
     t.datetime "created_at",        null: false
@@ -96,6 +107,13 @@ ActiveRecord::Schema.define(version: 20170529083949) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "tarjeta", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "numero"
+    t.float    "credito",    limit: 24
+    t.datetime "created_at",            null: false
+    t.datetime "updated_at",            null: false
+  end
+
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "email",                  default: "",    null: false
     t.string   "encrypted_password",     default: "",    null: false
@@ -127,6 +145,7 @@ ActiveRecord::Schema.define(version: 20170529083949) do
   end
 
   add_foreign_key "buys", "users"
+  add_foreign_key "compras", "users"
   add_foreign_key "gauchadas", "users"
   add_foreign_key "postularses", "gauchadas"
   add_foreign_key "postularses", "users"
