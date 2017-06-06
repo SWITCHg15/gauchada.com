@@ -11,9 +11,9 @@
   display:inline;
   font-size:1em;
   border-radius: 8em;
-  border:0.1em solid rgba(218,208,190,1);
-  box-shadow:0 0 0.3em rgba(60,60,60,0.4);
-  padding:0.3em;
+  border:0.1em solid rgba(0, 0, 0, 0.76);
+  box-shadow:0 0 0.6em rgba(0, 0, 0, 0.76);
+  padding:2.3em;
   background:white;
 }
 #s{
@@ -29,7 +29,7 @@
   opacity:0;
 }
 #s:focus{
-  width:8em;
+  width:30%;
   opacity:1;
 }
  #container label{
@@ -37,7 +37,7 @@
   display:inline-block;
   margin-top:0.3em;
   color:rgba(218,208,190,1);
-  text-shadow:0 0 0.1em rgba(60,60,60,0.3);
+  text-shadow:0 0 0.1em rgba(0, 0, 0, 0.76);
   position: relative;
   left:0.1em;
 }
