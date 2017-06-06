@@ -7637,3 +7637,43 @@ Processing by GauchadasController#index as HTML
 Completed 200 OK in 96ms (Views: 93.1ms | ActiveRecord: 1.3ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-06-06 00:10:09 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (18.9ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at /home/agustin/gauchada.com/unagauchada/app/controllers/application_controller.rb:4)
+Processing by IndexController#index as HTML
+  Rendering index/index.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `gauchadas`[0m
+  [1m[36mGauchada Load (0.4ms)[0m  [1m[34mSELECT `gauchadas`.* FROM `gauchadas`[0m
+  Rendered postularse/_show.html.erb (0.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.0ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.0ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+  Rendered gauchadas/_show_all_gauchadas.html.erb (144.2ms)
+  Rendered index/index.html.erb within layouts/application (146.8ms)
+  Rendered menu/_menu.html.erb (2.6ms)
+Completed 200 OK in 686ms (Views: 623.6ms | ActiveRecord: 28.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-06 00:10:20 -0300
+Processing by IndexController#index as HTML
+  Rendering index/index.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM `gauchadas`[0m
+  [1m[36mGauchada Load (0.5ms)[0m  [1m[34mSELECT `gauchadas`.* FROM `gauchadas`[0m
+  Rendered postularse/_show.html.erb (0.6ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 4 LIMIT 1[0m
+  Rendered gauchadas/_show_all_gauchadas.html.erb (41.8ms)
+  Rendered index/index.html.erb within layouts/application (44.7ms)
+  Rendered menu/_menu.html.erb (1.5ms)
+Completed 200 OK in 175ms (Views: 168.4ms | ActiveRecord: 3.9ms)
+
+
