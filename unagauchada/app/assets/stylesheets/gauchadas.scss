@@ -54,8 +54,8 @@ color: #f27321;
 .contenedor_guchada{
 	border: solid 1px #ccc ;
 	padding: 1%;
-	margin-bottom: 1%;
-	box-shadow: 1px 2px 3px 4px;
+	margin-bottom: 3%;
+	box-shadow: 1px 2px 3px 6px;
 	background:#fafafa !important;
 }
 .show_gauchada{
@@ -94,6 +94,25 @@ color: #f27321;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+.form_order{
+	text-align: left;
+	
+}
+.form_order select, .form_order .filtrar {
+	width: 15%;
+    padding: 1%;
+    background-color: #f27321;
+    color: #fff; 
+}
+.form_order .filtrar{
+		border-radius: 10%;
+		margin-top: 1%;
+
+}
+.form_order .filtrar:hover{
+	background-color:rgba(0, 0, 0, 0.76) ;
+    color: #f27321; 
 }
 /*p.descripcion_gauchadas {
     

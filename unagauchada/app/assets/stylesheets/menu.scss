@@ -3,9 +3,11 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "//netdna.bootstrapcdn.com/font-awesome/3.0/css/font-awesome.css";
 #container{
+  float: right;
   margin:auto;
   padding:3em 0 0;
   text-align:center;
+  margin-bottom: 7%;
 }
 #searchform{
   display:inline;
@@ -28,8 +30,9 @@
   background-color: transparent;
   opacity:0;
 }
+
 #s:focus{
-  width:30%;
+  width:70%;
   opacity:1;
 }
  #container label{

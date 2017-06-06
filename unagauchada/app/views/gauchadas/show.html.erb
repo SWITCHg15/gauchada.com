@@ -47,6 +47,8 @@
   <%else%>      
   <%= link_to 'Postularse', {controller:"postularse", action:"new", id_gauchada: @gauchada.id}, :class => "link_gauchadas"%>
   <% end %>
+<%else%>      
+  <%= link_to 'Postularse', {controller:"postularse", action:"new", id_gauchada: @gauchada.id}, :class => "link_gauchadas"%>
 <% end %>
 <strong><p class="autor_gauchada by_autor">Por: <a  href="#"><%= @gauchada.user.nombre %> <%= @gauchada.user.apellido %></a> </p></strong>
 <p id="notice"><%= notice %></p>

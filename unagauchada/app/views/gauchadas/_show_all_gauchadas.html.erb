@@ -1,3 +1,4 @@
+<div class="filters">
 <div id="container" >
 <form role="search" method="get" id="searchform" action="/gauchadas" >
   <label for="s">
@@ -10,8 +11,8 @@
   <% if @gauchadas.empty?%>
   <%= "acomodame q me veo feo" %>
   <%end%>
-      
-      <form action="/gauchadas" method="get"> 
+  </div>
+      <form action="/gauchadas" class="form_order" method="get"> 
         <SELECT NAME="selecion">
         <%if @selecion=="title" %> 
            <OPTION VALUE="title"selected>Titulo</OPTION> 
@@ -29,22 +30,22 @@
              <OPTION VALUE="created_at">Cronologicamente</OPTION>
            <%end%>
         </SELECT>
-        <BR><BR> 
         <SELECT NAME="opcion" SIZE="1">
           <%if @order=="ASC" %>
-           <OPTION VALUE="ASC"selected>Asc</OPTION> 
+           <OPTION VALUE="ASC"selected>Ascendente</OPTION> 
            <%else%>
-            <OPTION VALUE="ASC">Asc</OPTION> 
+            <OPTION VALUE="ASC">Ascendete</OPTION> 
             <%end%>
           <%if @order=="DESC"%>
-           <OPTION VALUE="DESC"selected>Desc</OPTION> 
+           <OPTION VALUE="DESC"selected>Descendete</OPTION> 
            <%else%>
-           <OPTION VALUE="DESC">Desc</OPTION>
+           <OPTION VALUE="DESC">Descendete</OPTION>
            <%end%>
 
         </SELECT> 
         <input type="hidden" name="searchbox" value="<%=@busqueda%>">
-        <input TYPE="submit">
+       
+        <input class="filtrar" TYPE="submit" value="Filtrar">
        </form>
 
     <% @gauchadas.each do |gauchada| %>
@@ -70,9 +71,14 @@
         <% if current_user.id == gauchada.user.id %>
             <%= link_to 'Editar', edit_gauchada_path(gauchada), :class => "link_gauchadas" %>
             <%= link_to 'Eliminar', gauchada, :class => "link_gauchadas", method: :delete, data: { confirm: '¿Estas seguro?' } %>
+        <% else %>
+
+          <%= link_to 'Postularse', {controller:"postularse", action:"new", id_gauchada: gauchada.id}, :class => "link_gauchadas"%>    
         <% end %>
-    <% end %>
-    <%= link_to 'Postularse', {controller:"postularse", action:"new", id_gauchada: gauchada.id}, :class => "link_gauchadas"%>
+      <%else%>
+        <%= link_to 'Postularse', {controller:"postularse", action:"new", id_gauchada: gauchada.id}, :class => "link_gauchadas"%>    
+      <%end%>
+    
     <%=  
    render 'postularse/show'  %>
     <p class="by_autor" >Por: <a  href="#"><%= gauchada.user.nombre %> <%= gauchada.user.apellido %></a>
