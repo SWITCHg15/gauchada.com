@@ -7738,3 +7738,1809 @@ Processing by IndexController#index as HTML
 Completed 200 OK in 175ms (Views: 168.4ms | ActiveRecord: 3.9ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-06-06 09:09:47 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (65.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at /home/eze/sitiosEze/gauchada.com/gauchada.com/unagauchada/app/controllers/application_controller.rb:4)
+Processing by IndexController#index as HTML
+  Rendering index/index.html.erb within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `gauchadas`[0m
+  [1m[36mGauchada Load (0.5ms)[0m  [1m[34mSELECT `gauchadas`.* FROM `gauchadas`[0m
+  Rendered postularse/_show.html.erb (0.5ms)
+  [1m[36mUser Load (2.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mUser Load (4.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered gauchadas/_show_all_gauchadas.html.erb (670.0ms)
+  Rendered index/index.html.erb within layouts/application (862.1ms)
+  Rendered menu/_menu.html.erb (1.9ms)
+Completed 200 OK in 63272ms (Views: 62767.6ms | ActiveRecord: 14.9ms)
+
+
+Started GET "/gauchadas?selecion=title&opcion=DESC&searchbox=" for 127.0.0.1 at 2017-06-06 09:11:06 -0300
+Processing by GauchadasController#index as HTML
+  Parameters: {"selecion"=>"title", "opcion"=>"DESC", "searchbox"=>""}
+  Rendering gauchadas/index.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM `gauchadas` WHERE (title LIKE '%%')[0m
+  [1m[36mGauchada Load (0.6ms)[0m  [1m[34mSELECT `gauchadas`.* FROM `gauchadas` WHERE (title LIKE '%%') ORDER BY title DESC[0m
+  Rendered postularse/_show.html.erb (0.6ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered gauchadas/_show_all_gauchadas.html.erb (37.9ms)
+  Rendered gauchadas/index.html.erb within layouts/application (39.9ms)
+  Rendered menu/_menu.html.erb (2.0ms)
+Completed 200 OK in 165ms (Views: 146.6ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/gauchadas?searchbox=perro" for 127.0.0.1 at 2017-06-06 09:11:19 -0300
+Processing by GauchadasController#index as HTML
+  Parameters: {"searchbox"=>"perro"}
+  Rendering gauchadas/index.html.erb within layouts/application
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT COUNT(*) FROM `gauchadas` WHERE (title LIKE '%perro%')[0m
+  [1m[36mGauchada Load (0.7ms)[0m  [1m[34mSELECT `gauchadas`.* FROM `gauchadas` WHERE (title LIKE '%perro%')[0m
+  Rendered gauchadas/_show_all_gauchadas.html.erb (9.5ms)
+  Rendered gauchadas/index.html.erb within layouts/application (11.6ms)
+  Rendered menu/_menu.html.erb (1.8ms)
+Completed 200 OK in 139ms (Views: 133.3ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-06 09:11:33 -0300
+Processing by IndexController#index as HTML
+  Rendering index/index.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM `gauchadas`[0m
+  [1m[36mGauchada Load (1.9ms)[0m  [1m[34mSELECT `gauchadas`.* FROM `gauchadas`[0m
+  Rendered postularse/_show.html.erb (0.6ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered gauchadas/_show_all_gauchadas.html.erb (91.9ms)
+  Rendered index/index.html.erb within layouts/application (97.1ms)
+  Rendered menu/_menu.html.erb (1.6ms)
+Completed 200 OK in 237ms (Views: 230.8ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-06 09:12:13 -0300
+Processing by IndexController#index as HTML
+  Rendering index/index.html.erb within layouts/application
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM `gauchadas`[0m
+  [1m[36mGauchada Load (0.7ms)[0m  [1m[34mSELECT `gauchadas`.* FROM `gauchadas`[0m
+  Rendered postularse/_show.html.erb (0.7ms)
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered gauchadas/_show_all_gauchadas.html.erb (61.9ms)
+  Rendered index/index.html.erb within layouts/application (67.5ms)
+  Rendered menu/_menu.html.erb (1.6ms)
+Completed 200 OK in 173ms (Views: 166.5ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/gauchadas" for 127.0.0.1 at 2017-06-06 09:12:17 -0300
+Processing by GauchadasController#index as HTML
+  Rendering gauchadas/index.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM `gauchadas`[0m
+  [1m[36mGauchada Load (0.5ms)[0m  [1m[34mSELECT `gauchadas`.* FROM `gauchadas`[0m
+  Rendered postularse/_show.html.erb (0.5ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered gauchadas/_show_all_gauchadas.html.erb (35.2ms)
+  Rendered gauchadas/index.html.erb within layouts/application (37.4ms)
+  Rendered menu/_menu.html.erb (1.8ms)
+Completed 200 OK in 383ms (Views: 378.8ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/buys/new" for 127.0.0.1 at 2017-06-06 09:12:18 -0300
+Processing by BuysController#new as HTML
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-06-06 09:12:18 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (75.8ms)
+  Rendered menu/_menu.html.erb (1.8ms)
+Completed 200 OK in 243ms (Views: 233.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/buys/assets/avatar.png" for 127.0.0.1 at 2017-06-06 09:12:19 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/buys/assets/avatar.png"):
+  
+actionpack (5.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.3) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered collection of /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb [44 times] (67.2ms)
+  Rendered /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.1ms)
+  Rendering /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.7ms)
+  Rendered /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (115.1ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-06-06 09:12:29 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ogug0609aOV/Sl6NK1uSps4WxR5dXyqdGsmNS4IW5nAn8ngaFs79Ecs3ESBAauh8sUT+aMA2p7NT+qG7M8fEzQ==", "user"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Iniciar Sesión"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'admin@admin.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (30.7ms)[0m  [1m[33mUPDATE `users` SET `current_sign_in_at` = '2017-06-06 12:12:30', `last_sign_in_at` = '2017-06-06 04:55:26', `sign_in_count` = 39, `updated_at` = '2017-06-06 12:12:30' WHERE `users`.`id` = 1[0m
+  [1m[35m (64.3ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/buys/new
+Completed 302 Found in 445ms (ActiveRecord: 96.0ms)
+
+
+Started GET "/buys/new" for 127.0.0.1 at 2017-06-06 09:12:30 -0300
+Processing by BuysController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering buys/new.html.erb within layouts/application
+  Rendered buys/_form.html.erb (14.7ms)
+  Rendered buys/new.html.erb within layouts/application (16.8ms)
+  Rendered menu/_menu.html.erb (2.2ms)
+Completed 200 OK in 207ms (Views: 135.0ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-06 09:12:54 -0300
+Processing by IndexController#index as HTML
+  Rendering index/index.html.erb within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `gauchadas`[0m
+  [1m[36mGauchada Load (0.8ms)[0m  [1m[34mSELECT `gauchadas`.* FROM `gauchadas`[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.5ms)
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  Rendered gauchadas/_show_all_gauchadas.html.erb (48.7ms)
+  Rendered index/index.html.erb within layouts/application (62.1ms)
+  Rendered menu/_menu.html.erb (1.6ms)
+Completed 200 OK in 171ms (Views: 164.2ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-06 09:25:25 -0300
+Processing by IndexController#index as HTML
+  Rendering index/index.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM `gauchadas`[0m
+  [1m[36mGauchada Load (0.6ms)[0m  [1m[34mSELECT `gauchadas`.* FROM `gauchadas`[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.8ms)
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  Rendered gauchadas/_show_all_gauchadas.html.erb (65.6ms)
+  Rendered index/index.html.erb within layouts/application (69.0ms)
+  Rendered menu/_menu.html.erb (1.7ms)
+Completed 200 OK in 184ms (Views: 176.0ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-06 09:47:59 -0300
+Processing by IndexController#index as HTML
+  Rendering index/index.html.erb within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `gauchadas`[0m
+  [1m[36mGauchada Load (0.6ms)[0m  [1m[34mSELECT `gauchadas`.* FROM `gauchadas`[0m
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (5.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  Rendered gauchadas/_show_all_gauchadas.html.erb (90.3ms)
+  Rendered index/index.html.erb within layouts/application (92.5ms)
+  Rendered menu/_menu.html.erb (1.6ms)
+Completed 200 OK in 7838ms (Views: 7830.4ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/buys/new" for 127.0.0.1 at 2017-06-06 09:48:14 -0300
+Processing by BuysController#new as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering buys/new.html.erb within layouts/application
+  Rendered buys/_form.html.erb (12.1ms)
+  Rendered buys/new.html.erb within layouts/application (17.6ms)
+  Rendered menu/_menu.html.erb (1.9ms)
+Completed 200 OK in 384ms (Views: 375.8ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/buys/new" for 127.0.0.1 at 2017-06-06 09:49:14 -0300
+Processing by BuysController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering buys/new.html.erb within layouts/application
+  Rendered buys/_form.html.erb (3.8ms)
+  Rendered buys/new.html.erb within layouts/application (6.1ms)
+  Rendered menu/_menu.html.erb (2.8ms)
+Completed 200 OK in 5781ms (Views: 5776.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/buys/assets/avatar.png" for 127.0.0.1 at 2017-06-06 09:49:20 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/buys/assets/avatar.png"):
+  
+actionpack (5.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.3) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/buys/new" for 127.0.0.1 at 2017-06-06 09:49:20 -0300
+Processing by BuysController#new as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering buys/new.html.erb within layouts/application
+  Rendered buys/_form.html.erb (4.2ms)
+  Rendered buys/new.html.erb within layouts/application (10.8ms)
+  Rendering /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendered collection of /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb [44 times] (30.4ms)
+  Rendered /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.2ms)
+  Rendering /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (128.4ms)
+  Rendered menu/_menu.html.erb (1.9ms)
+Completed 200 OK in 353ms (Views: 338.8ms | ActiveRecord: 1.3ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-06-06 09:49:55 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"kFCh3bODFtT3N4sL8xFRDDRqH+NMznW7m7LczwyEXF8DNWWa4nx9VqLM+X8mgEDiMZzWB4VkP1oGerNxh3claQ=="}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 45ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-06 09:49:55 -0300
+Processing by IndexController#index as HTML
+  Rendering index/index.html.erb within layouts/application
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM `gauchadas`[0m
+  [1m[36mGauchada Load (0.5ms)[0m  [1m[34mSELECT `gauchadas`.* FROM `gauchadas`[0m
+  Rendered postularse/_show.html.erb (0.4ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.2ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered gauchadas/_show_all_gauchadas.html.erb (36.2ms)
+  Rendered index/index.html.erb within layouts/application (38.0ms)
+  Rendered menu/_menu.html.erb (1.8ms)
+Completed 200 OK in 141ms (Views: 136.0ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-06-06 09:49:57 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (9.2ms)
+  Rendered menu/_menu.html.erb (1.7ms)
+Completed 200 OK in 156ms (Views: 153.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/assets/avatar.png" for 127.0.0.1 at 2017-06-06 09:49:58 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/users/assets/avatar.png"):
+  
+actionpack (5.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.3) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered collection of /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb [44 times] (24.7ms)
+  Rendered /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.8ms)
+  Rendering /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (65.7ms)
+Started GET "/users/sign_up" for 127.0.0.1 at 2017-06-06 09:50:23 -0300
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (29.7ms)
+  Rendered menu/_menu.html.erb (1.6ms)
+Completed 200 OK in 149ms (Views: 146.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-06-06 09:51:16 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (32.1ms)
+  Rendered menu/_menu.html.erb (7.8ms)
+Completed 200 OK in 207ms (Views: 204.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/gauchadas/new" for 127.0.0.1 at 2017-06-06 09:51:22 -0300
+Processing by GauchadasController#new as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-06-06 09:51:22 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (8.0ms)
+  Rendered menu/_menu.html.erb (1.6ms)
+Completed 200 OK in 127ms (Views: 125.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-06-06 09:51:25 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SlKYjBBhF8cs6kFkPSSu7ZRhHf81Ia/X/aDqmMfvh7YjaOZN6zK5wfKw86k1MqQgIRWqMJfcts1MsWGr5ykuzw==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Iniciar Sesión"}
+Completed 401 Unauthorized in 13ms (ActiveRecord: 0.0ms)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SlKYjBBhF8cs6kFkPSSu7ZRhHf81Ia/X/aDqmMfvh7YjaOZN6zK5wfKw86k1MqQgIRWqMJfcts1MsWGr5ykuzw==", "user"=>{"email"=>"", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Iniciar Sesión"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (10.2ms)
+  Rendered menu/_menu.html.erb (1.8ms)
+Completed 200 OK in 154ms (Views: 150.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-06-06 09:51:29 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vWz08V4pjY32LH+pnMLI/VO7OVhpvK8rY3qdkt0qnonyT8bHahqs/U95HXFhRM2zQaRgBTCMz6Hns1AtXbZBrA==", "user"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Iniciar Sesión"}
+  [1m[36mUser Load (2.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'admin@admin.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE `users` SET `current_sign_in_at` = '2017-06-06 12:51:30', `last_sign_in_at` = '2017-06-06 12:12:30', `sign_in_count` = 40, `updated_at` = '2017-06-06 12:51:30' WHERE `users`.`id` = 1[0m
+  [1m[35m (49.4ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/gauchadas/new
+Completed 302 Found in 274ms (ActiveRecord: 53.1ms)
+
+
+Started GET "/gauchadas/new" for 127.0.0.1 at 2017-06-06 09:51:30 -0300
+Processing by GauchadasController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering gauchadas/new.html.erb within layouts/application
+  Rendered gauchadas/_form.html.erb (26.2ms)
+  Rendered gauchadas/new.html.erb within layouts/application (44.3ms)
+  Rendered menu/_menu.html.erb (2.1ms)
+Completed 200 OK in 174ms (Views: 169.0ms | ActiveRecord: 0.6ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-06-06 09:51:40 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"sMLgXpZAU5qX0kfMI+S+9u/W5dplYpn1cUhdLdIXHAGwfPbNJTRZ7ZeSKBgwstvIDIB6hHuvB9Dhf6AvOsc92w=="}
+  [1m[36mUser Load (11.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (1.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 29ms (ActiveRecord: 15.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-06 09:51:40 -0300
+Processing by IndexController#index as HTML
+  Rendering index/index.html.erb within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `gauchadas`[0m
+  [1m[36mGauchada Load (0.8ms)[0m  [1m[34mSELECT `gauchadas`.* FROM `gauchadas`[0m
+  Rendered postularse/_show.html.erb (0.6ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered gauchadas/_show_all_gauchadas.html.erb (49.9ms)
+  Rendered index/index.html.erb within layouts/application (52.3ms)
+  Rendered menu/_menu.html.erb (1.9ms)
+Completed 200 OK in 220ms (Views: 215.0ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-06 11:02:17 -0300
+Processing by IndexController#index as HTML
+  Rendering index/index.html.erb within layouts/application
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM `gauchadas`[0m
+  [1m[36mGauchada Load (0.6ms)[0m  [1m[34mSELECT `gauchadas`.* FROM `gauchadas`[0m
+  Rendered postularse/_show.html.erb (0.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered gauchadas/_show_all_gauchadas.html.erb (36.1ms)
+  Rendered index/index.html.erb within layouts/application (79.8ms)
+  Rendered menu/_menu.html.erb (1.5ms)
+Completed 200 OK in 1112ms (Views: 1076.2ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/buys/new" for 127.0.0.1 at 2017-06-06 11:02:35 -0300
+Processing by BuysController#new as HTML
+Completed 401 Unauthorized in 1ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-06-06 11:02:35 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (40.9ms)
+  Rendered menu/_menu.html.erb (1.6ms)
+Completed 200 OK in 166ms (Views: 163.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/buys/assets/avatar.png" for 127.0.0.1 at 2017-06-06 11:02:35 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/buys/assets/avatar.png"):
+  
+actionpack (5.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.3) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.9ms)
+  Rendered collection of /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb [44 times] (52.5ms)
+  Rendered /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.7ms)
+  Rendering /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (94.5ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-06-06 11:02:39 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Xh1gN+M9uhOqAC+eRDmqsVOIJmfmBX7eSYHh2cM1G8CJha0XgycAdB3Kmd/fcicz2MEVFedBbRCAmAK4WttFWw==", "user"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Iniciar Sesión"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'admin@admin.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE `users` SET `current_sign_in_at` = '2017-06-06 14:02:40', `last_sign_in_at` = '2017-06-06 12:51:30', `sign_in_count` = 41, `updated_at` = '2017-06-06 14:02:40' WHERE `users`.`id` = 1[0m
+  [1m[35m (50.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/buys/new
+Completed 302 Found in 277ms (ActiveRecord: 52.0ms)
+
+
+Started GET "/buys/new" for 127.0.0.1 at 2017-06-06 11:02:40 -0300
+Processing by BuysController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering buys/new.html.erb within layouts/application
+  Rendered buys/_form.html.erb (3.1ms)
+  Rendered buys/new.html.erb within layouts/application (22.9ms)
+  Rendered menu/_menu.html.erb (1.6ms)
+Completed 200 OK in 141ms (Views: 126.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/gauchadas/new" for 127.0.0.1 at 2017-06-06 11:02:50 -0300
+Processing by GauchadasController#new as HTML
+  [1m[36mUser Load (4.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering gauchadas/new.html.erb within layouts/application
+  Rendered gauchadas/_form.html.erb (10.3ms)
+  Rendered gauchadas/new.html.erb within layouts/application (37.3ms)
+  Rendered menu/_menu.html.erb (1.4ms)
+Completed 200 OK in 162ms (Views: 153.2ms | ActiveRecord: 4.1ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-06-06 11:02:58 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ZPTp3M9WgSYLPjHj3mXZ7KfPVHRB8U1Hrq4wlYQBrwFYsov/CY51wihehBF0lIbf83GhFLa6u8IJydr6OS+SVA=="}
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 17ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-06 11:02:58 -0300
+Processing by IndexController#index as HTML
+  Rendering index/index.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM `gauchadas`[0m
+  [1m[36mGauchada Load (1.7ms)[0m  [1m[34mSELECT `gauchadas`.* FROM `gauchadas`[0m
+  Rendered postularse/_show.html.erb (0.4ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered gauchadas/_show_all_gauchadas.html.erb (40.5ms)
+  Rendered index/index.html.erb within layouts/application (42.3ms)
+  Rendered menu/_menu.html.erb (1.7ms)
+Completed 200 OK in 160ms (Views: 154.6ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-06-06 11:03:17 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (1.9ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (9.4ms)
+  Rendered menu/_menu.html.erb (1.6ms)
+Completed 200 OK in 138ms (Views: 122.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/assets/avatar.png" for 127.0.0.1 at 2017-06-06 11:03:18 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/users/assets/avatar.png"):
+  
+actionpack (5.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.3) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered collection of /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb [44 times] (26.5ms)
+  Rendered /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.9ms)
+  Rendering /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (67.9ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-06-06 11:03:20 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BrhjpovoQrtYupajhD5yHhGOOC6Oj1Ls6DHLfSeAkEdObI/5+z6bnmaNq5m0rJ/uz2LvupdWpEuzXjSARoVnFA==", "user"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Iniciar Sesión"}
+  [1m[36mUser Load (3.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'admin@admin.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE `users` SET `current_sign_in_at` = '2017-06-06 14:03:20', `last_sign_in_at` = '2017-06-06 14:02:40', `sign_in_count` = 42, `updated_at` = '2017-06-06 14:03:20' WHERE `users`.`id` = 1[0m
+  [1m[35m (76.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 313ms (ActiveRecord: 80.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-06 11:03:20 -0300
+Processing by IndexController#index as HTML
+  Rendering index/index.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `gauchadas`[0m
+  [1m[36mGauchada Load (0.5ms)[0m  [1m[34mSELECT `gauchadas`.* FROM `gauchadas`[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  Rendered gauchadas/_show_all_gauchadas.html.erb (35.8ms)
+  Rendered index/index.html.erb within layouts/application (37.3ms)
+  Rendered menu/_menu.html.erb (1.4ms)
+Completed 200 OK in 151ms (Views: 147.0ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/gauchadas" for 127.0.0.1 at 2017-06-06 11:03:29 -0300
+Processing by GauchadasController#index as HTML
+  Rendering gauchadas/index.html.erb within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `gauchadas`[0m
+  [1m[36mGauchada Load (0.5ms)[0m  [1m[34mSELECT `gauchadas`.* FROM `gauchadas`[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  Rendered gauchadas/_show_all_gauchadas.html.erb (44.1ms)
+  Rendered gauchadas/index.html.erb within layouts/application (46.3ms)
+  Rendered menu/_menu.html.erb (1.8ms)
+Completed 200 OK in 219ms (Views: 195.2ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/buys/new" for 127.0.0.1 at 2017-06-06 11:03:33 -0300
+Processing by BuysController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering buys/new.html.erb within layouts/application
+  Rendered buys/_form.html.erb (8.4ms)
+  Rendered buys/new.html.erb within layouts/application (10.4ms)
+  Rendered menu/_menu.html.erb (1.4ms)
+Completed 200 OK in 140ms (Views: 134.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/buys/assets/avatar.png" for 127.0.0.1 at 2017-06-06 11:03:33 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/buys/assets/avatar.png"):
+  
+actionpack (5.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.3) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.1ms)
+  Rendered collection of /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb [44 times] (26.6ms)
+  Rendered /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.1ms)
+  Rendering /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (71.3ms)
+Started POST "/buys" for 127.0.0.1 at 2017-06-06 11:03:37 -0300
+Processing by BuysController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oBYtGW+GyehEUFtsPFshIUB/nZMJdDeO+d+wlE3/cRBZTio8PJfI84JtJkNmKpjkAyIlTI/ksvX9aBYriLNuAg==", "buy"=>{"cantidad"=>"1", "numero_de_tarjeta"=>"324431"}, "commit"=>"Realizar Compra"}
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT  `cards`.* FROM `cards` WHERE `cards`.`numero` = 324431 LIMIT 1[0m
+Redirected to http://localhost:3000/buys/new
+Completed 302 Found in 218ms (ActiveRecord: 47.9ms)
+
+
+Started GET "/buys/new" for 127.0.0.1 at 2017-06-06 11:03:38 -0300
+Processing by BuysController#new as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering buys/new.html.erb within layouts/application
+  Rendered buys/_form.html.erb (3.6ms)
+  Rendered buys/new.html.erb within layouts/application (5.3ms)
+  Rendered menu/_menu.html.erb (1.4ms)
+Completed 200 OK in 118ms (Views: 111.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-06 14:26:28 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (10.4ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at /home/eze/sitiosEze/gauchada.com/gauchada.com/unagauchada/app/controllers/application_controller.rb:4)
+Processing by IndexController#index as HTML
+  Rendering index/index.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM `gauchadas`[0m
+  [1m[36mGauchada Load (0.6ms)[0m  [1m[34mSELECT `gauchadas`.* FROM `gauchadas`[0m
+  Rendered postularse/_show.html.erb (0.7ms)
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered gauchadas/_show_all_gauchadas.html.erb (224.6ms)
+  Rendered index/index.html.erb within layouts/application (257.1ms)
+  Rendered menu/_menu.html.erb (2.3ms)
+Completed 200 OK in 20926ms (Views: 20806.7ms | ActiveRecord: 8.5ms)
+
+
+Started GET "/gauchadas/1" for 127.0.0.1 at 2017-06-06 14:27:54 -0300
+Processing by GauchadasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGauchada Load (0.9ms)[0m  [1m[34mSELECT  `gauchadas`.* FROM `gauchadas` WHERE `gauchadas`.`id` = 1 LIMIT 1[0m
+  Rendering gauchadas/show.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered gauchadas/show.html.erb within layouts/application (6.5ms)
+  Rendered menu/_menu.html.erb (1.9ms)
+Completed 200 OK in 169ms (Views: 150.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/gauchadas/assets/avatar.png" for 127.0.0.1 at 2017-06-06 14:27:55 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/gauchadas/assets/avatar.png"):
+  
+actionpack (5.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.3) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.5ms)
+  Rendered collection of /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb [44 times] (62.5ms)
+  Rendered /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (41.3ms)
+  Rendering /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (4.6ms)
+  Rendered /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (164.0ms)
+Started GET "/postularse/new?id_gauchada=1" for 127.0.0.1 at 2017-06-06 14:28:39 -0300
+Processing by PostularseController#new as HTML
+  Parameters: {"id_gauchada"=>"1"}
+Completed 401 Unauthorized in 2ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-06-06 14:28:39 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (3.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (60.6ms)
+  Rendered menu/_menu.html.erb (2.8ms)
+Completed 200 OK in 275ms (Views: 255.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-06-06 14:28:44 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"HZllkhwbvVWW6dygPK1N84cL6h6prNWmoiBC3Y+gbpJKoaxzPqcpxidUSEWQyXA9DptQhqPZvK5P/1p4n8rtmw==", "user"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Iniciar Sesión"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'admin@admin.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (28.5ms)[0m  [1m[33mUPDATE `users` SET `current_sign_in_at` = '2017-06-06 17:28:44', `last_sign_in_at` = '2017-06-06 14:03:20', `sign_in_count` = 43, `updated_at` = '2017-06-06 17:28:44' WHERE `users`.`id` = 1[0m
+  [1m[35m (53.7ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/postularse/new?id_gauchada=1
+Completed 302 Found in 356ms (ActiveRecord: 83.2ms)
+
+
+Started GET "/postularse/new?id_gauchada=1" for 127.0.0.1 at 2017-06-06 14:28:45 -0300
+Processing by PostularseController#new as HTML
+  Parameters: {"id_gauchada"=>"1"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering postularse/new.html.erb within layouts/application
+  Rendered postularse/_form.html.erb (21.1ms)
+  Rendered postularse/new.html.erb within layouts/application (38.4ms)
+  Rendered menu/_menu.html.erb (1.9ms)
+Completed 200 OK in 275ms (Views: 148.7ms | ActiveRecord: 53.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-06 14:28:57 -0300
+Processing by IndexController#index as HTML
+  Rendering index/index.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM `gauchadas`[0m
+  [1m[36mGauchada Load (0.5ms)[0m  [1m[34mSELECT `gauchadas`.* FROM `gauchadas`[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.6ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  Rendered gauchadas/_show_all_gauchadas.html.erb (58.1ms)
+  Rendered index/index.html.erb within layouts/application (60.0ms)
+  Rendered menu/_menu.html.erb (1.6ms)
+Completed 200 OK in 163ms (Views: 157.7ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/gauchadas/1" for 127.0.0.1 at 2017-06-06 14:29:34 -0300
+Processing by GauchadasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGauchada Load (0.7ms)[0m  [1m[34mSELECT  `gauchadas`.* FROM `gauchadas` WHERE `gauchadas`.`id` = 1 LIMIT 1[0m
+  Rendering gauchadas/show.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered gauchadas/show.html.erb within layouts/application (35.2ms)
+  Rendered menu/_menu.html.erb (1.5ms)
+Completed 200 OK in 167ms (Views: 157.3ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/gauchadas/assets/avatar.png" for 127.0.0.1 at 2017-06-06 14:29:34 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/gauchadas/assets/avatar.png"):
+  
+actionpack (5.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.3) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.9ms)
+  Rendered collection of /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb [44 times] (35.5ms)
+  Rendered /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.1ms)
+  Rendering /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (79.7ms)
+Started DELETE "/gauchadas/1" for 127.0.0.1 at 2017-06-06 14:29:55 -0300
+Processing by GauchadasController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Vfsv5YI36GM8+K4YjBg4Bajp8DnNPQhGyrnfnhp9gp0x3alNPcLVf5tydovnEh1d4DkVzU0HKVXC/1i3osvG9A==", "id"=>"1"}
+  [1m[36mGauchada Load (0.8ms)[0m  [1m[34mSELECT  `gauchadas`.* FROM `gauchadas` WHERE `gauchadas`.`id` = 1 LIMIT 1[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/gauchadas/1
+Completed 302 Found in 24ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/gauchadas/1" for 127.0.0.1 at 2017-06-06 14:29:55 -0300
+Processing by GauchadasController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mGauchada Load (0.6ms)[0m  [1m[34mSELECT  `gauchadas`.* FROM `gauchadas` WHERE `gauchadas`.`id` = 1 LIMIT 1[0m
+  Rendering gauchadas/show.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered gauchadas/show.html.erb within layouts/application (10.6ms)
+  Rendered menu/_menu.html.erb (1.8ms)
+Completed 200 OK in 130ms (Views: 122.0ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/gauchadas/3" for 127.0.0.1 at 2017-06-06 15:02:37 -0300
+Processing by GauchadasController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mGauchada Load (0.8ms)[0m  [1m[34mSELECT  `gauchadas`.* FROM `gauchadas` WHERE `gauchadas`.`id` = 3 LIMIT 1[0m
+  Rendering gauchadas/show.html.erb within layouts/application
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered gauchadas/show.html.erb within layouts/application (9.5ms)
+  Rendered menu/_menu.html.erb (2.0ms)
+Completed 200 OK in 291ms (Views: 242.6ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/gauchadas/assets/avatar.png" for 127.0.0.1 at 2017-06-06 15:02:38 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/gauchadas/assets/avatar.png"):
+  
+actionpack (5.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.3) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered collection of /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb [44 times] (25.7ms)
+  Rendered /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.1ms)
+  Rendering /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (66.4ms)
+Started GET "/gauchadas/3/edit" for 127.0.0.1 at 2017-06-06 15:02:57 -0300
+Processing by GauchadasController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mGauchada Load (0.7ms)[0m  [1m[34mSELECT  `gauchadas`.* FROM `gauchadas` WHERE `gauchadas`.`id` = 3 LIMIT 1[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/gauchadas/3
+Completed 302 Found in 9ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/gauchadas/3" for 127.0.0.1 at 2017-06-06 15:02:57 -0300
+Processing by GauchadasController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mGauchada Load (23.7ms)[0m  [1m[34mSELECT  `gauchadas`.* FROM `gauchadas` WHERE `gauchadas`.`id` = 3 LIMIT 1[0m
+  Rendering gauchadas/show.html.erb within layouts/application
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered gauchadas/show.html.erb within layouts/application (9.6ms)
+  Rendered menu/_menu.html.erb (1.5ms)
+Completed 200 OK in 138ms (Views: 109.7ms | ActiveRecord: 25.1ms)
+
+
+Started GET "/gauchadas" for 127.0.0.1 at 2017-06-06 15:03:04 -0300
+Processing by GauchadasController#index as HTML
+  Rendering gauchadas/index.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM `gauchadas`[0m
+  [1m[36mGauchada Load (0.5ms)[0m  [1m[34mSELECT `gauchadas`.* FROM `gauchadas`[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  Rendered gauchadas/_show_all_gauchadas.html.erb (36.1ms)
+  Rendered gauchadas/index.html.erb within layouts/application (55.5ms)
+  Rendered menu/_menu.html.erb (1.6ms)
+Completed 200 OK in 172ms (Views: 166.0ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/gauchadas?selecion=title&opcion=DESC&searchbox=" for 127.0.0.1 at 2017-06-06 15:03:12 -0300
+Processing by GauchadasController#index as HTML
+  Parameters: {"selecion"=>"title", "opcion"=>"DESC", "searchbox"=>""}
+  Rendering gauchadas/index.html.erb within layouts/application
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM `gauchadas` WHERE (title LIKE '%%')[0m
+  [1m[36mGauchada Load (0.8ms)[0m  [1m[34mSELECT `gauchadas`.* FROM `gauchadas` WHERE (title LIKE '%%') ORDER BY title DESC[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  Rendered gauchadas/_show_all_gauchadas.html.erb (41.8ms)
+  Rendered gauchadas/index.html.erb within layouts/application (43.8ms)
+  Rendered menu/_menu.html.erb (1.6ms)
+Completed 200 OK in 185ms (Views: 177.0ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/gauchadas?searchbox=desp" for 127.0.0.1 at 2017-06-06 15:03:27 -0300
+Processing by GauchadasController#index as HTML
+  Parameters: {"searchbox"=>"desp"}
+  Rendering gauchadas/index.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM `gauchadas` WHERE (title LIKE '%desp%')[0m
+  [1m[36mGauchada Load (0.5ms)[0m  [1m[34mSELECT `gauchadas`.* FROM `gauchadas` WHERE (title LIKE '%desp%')[0m
+  Rendered gauchadas/_show_all_gauchadas.html.erb (6.3ms)
+  Rendered gauchadas/index.html.erb within layouts/application (9.8ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered menu/_menu.html.erb (4.5ms)
+Completed 200 OK in 122ms (Views: 118.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/gauchadas?searchbox=hola" for 127.0.0.1 at 2017-06-06 15:03:39 -0300
+Processing by GauchadasController#index as HTML
+  Parameters: {"searchbox"=>"hola"}
+  Rendering gauchadas/index.html.erb within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `gauchadas` WHERE (title LIKE '%hola%')[0m
+  [1m[36mGauchada Load (0.7ms)[0m  [1m[34mSELECT `gauchadas`.* FROM `gauchadas` WHERE (title LIKE '%hola%')[0m
+  Rendered gauchadas/_show_all_gauchadas.html.erb (7.3ms)
+  Rendered gauchadas/index.html.erb within layouts/application (15.9ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered menu/_menu.html.erb (4.0ms)
+Completed 200 OK in 124ms (Views: 120.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/gauchadas?searchbox=hola" for 127.0.0.1 at 2017-06-06 15:03:45 -0300
+Processing by GauchadasController#index as HTML
+  Parameters: {"searchbox"=>"hola"}
+  Rendering gauchadas/index.html.erb within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `gauchadas` WHERE (title LIKE '%hola%')[0m
+  [1m[36mGauchada Load (0.6ms)[0m  [1m[34mSELECT `gauchadas`.* FROM `gauchadas` WHERE (title LIKE '%hola%')[0m
+  Rendered gauchadas/_show_all_gauchadas.html.erb (7.3ms)
+  Rendered gauchadas/index.html.erb within layouts/application (9.8ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered menu/_menu.html.erb (3.7ms)
+Completed 200 OK in 137ms (Views: 133.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/gauchadas?searchbox=bus" for 127.0.0.1 at 2017-06-06 15:03:50 -0300
+Processing by GauchadasController#index as HTML
+  Parameters: {"searchbox"=>"bus"}
+  Rendering gauchadas/index.html.erb within layouts/application
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM `gauchadas` WHERE (title LIKE '%bus%')[0m
+  [1m[36mGauchada Load (0.6ms)[0m  [1m[34mSELECT `gauchadas`.* FROM `gauchadas` WHERE (title LIKE '%bus%')[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  Rendered gauchadas/_show_all_gauchadas.html.erb (22.1ms)
+  Rendered gauchadas/index.html.erb within layouts/application (28.6ms)
+  Rendered menu/_menu.html.erb (1.4ms)
+Completed 200 OK in 139ms (Views: 134.7ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/gauchadas" for 127.0.0.1 at 2017-06-06 15:04:05 -0300
+Processing by GauchadasController#index as HTML
+  Rendering gauchadas/index.html.erb within layouts/application
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT COUNT(*) FROM `gauchadas`[0m
+  [1m[36mGauchada Load (0.5ms)[0m  [1m[34mSELECT `gauchadas`.* FROM `gauchadas`[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  Rendered gauchadas/_show_all_gauchadas.html.erb (55.5ms)
+  Rendered gauchadas/index.html.erb within layouts/application (58.5ms)
+  Rendered menu/_menu.html.erb (1.5ms)
+Completed 200 OK in 171ms (Views: 165.8ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/gauchadas?selecion=title&opcion=ASC&searchbox=" for 127.0.0.1 at 2017-06-06 15:04:06 -0300
+Processing by GauchadasController#index as HTML
+  Parameters: {"selecion"=>"title", "opcion"=>"ASC", "searchbox"=>""}
+  Rendering gauchadas/index.html.erb within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `gauchadas` WHERE (title LIKE '%%')[0m
+  [1m[36mGauchada Load (1.6ms)[0m  [1m[34mSELECT `gauchadas`.* FROM `gauchadas` WHERE (title LIKE '%%') ORDER BY title ASC[0m
+  [1m[36mUser Load (3.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.5ms)
+  [1m[36mCACHE (0.3ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  Rendered gauchadas/_show_all_gauchadas.html.erb (104.8ms)
+  Rendered gauchadas/index.html.erb within layouts/application (108.1ms)
+  Rendered menu/_menu.html.erb (1.8ms)
+Completed 200 OK in 214ms (Views: 204.3ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-06 15:04:16 -0300
+Processing by IndexController#index as HTML
+  Rendering index/index.html.erb within layouts/application
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT COUNT(*) FROM `gauchadas`[0m
+  [1m[36mGauchada Load (1.0ms)[0m  [1m[34mSELECT `gauchadas`.* FROM `gauchadas`[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  Rendered gauchadas/_show_all_gauchadas.html.erb (38.1ms)
+  Rendered index/index.html.erb within layouts/application (41.0ms)
+  Rendered menu/_menu.html.erb (1.5ms)
+Completed 200 OK in 167ms (Views: 145.9ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-06 15:04:28 -0300
+Processing by IndexController#index as HTML
+  Rendering index/index.html.erb within layouts/application
+  [1m[35m (2.7ms)[0m  [1m[34mSELECT COUNT(*) FROM `gauchadas`[0m
+  [1m[36mGauchada Load (0.5ms)[0m  [1m[34mSELECT `gauchadas`.* FROM `gauchadas`[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  Rendered gauchadas/_show_all_gauchadas.html.erb (57.4ms)
+  Rendered index/index.html.erb within layouts/application (60.5ms)
+  Rendered menu/_menu.html.erb (1.4ms)
+Completed 200 OK in 172ms (Views: 164.4ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/buys/new" for 127.0.0.1 at 2017-06-06 15:04:31 -0300
+Processing by BuysController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering buys/new.html.erb within layouts/application
+  Rendered buys/_form.html.erb (512.0ms)
+  Rendered buys/new.html.erb within layouts/application (529.9ms)
+  Rendered menu/_menu.html.erb (1.8ms)
+Completed 200 OK in 756ms (Views: 641.3ms | ActiveRecord: 46.0ms)
+
+
+Started GET "/buys/assets/avatar.png" for 127.0.0.1 at 2017-06-06 15:04:32 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/buys/assets/avatar.png"):
+  
+actionpack (5.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.3) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.0ms)
+  Rendered collection of /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb [44 times] (59.5ms)
+  Rendered /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.7ms)
+  Rendering /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.7ms)
+  Rendered /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (110.3ms)
+Started POST "/buys" for 127.0.0.1 at 2017-06-06 15:04:51 -0300
+Processing by BuysController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3pyCSVBLXGF1f+FYq5avDdt9mb/s5jTkIuX7GoIrR/VHw8NtTSWyYpBFDrgCq+58iZN4kG+oLSBSKe7KU/9OJg==", "buy"=>{"cantidad"=>"3", "numero_de_tarjeta"=>"111"}, "commit"=>"Realizar Compra"}
+  [1m[36mUser Load (3.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCard Load (1.0ms)[0m  [1m[34mSELECT  `cards`.* FROM `cards` WHERE `cards`.`numero` = 111 LIMIT 1[0m
+Redirected to http://localhost:3000/buys/new
+Completed 302 Found in 66ms (ActiveRecord: 7.6ms)
+
+
+Started GET "/buys/new" for 127.0.0.1 at 2017-06-06 15:04:51 -0300
+Processing by BuysController#new as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering buys/new.html.erb within layouts/application
+  Rendered buys/_form.html.erb (3.2ms)
+  Rendered buys/new.html.erb within layouts/application (5.3ms)
+  Rendered menu/_menu.html.erb (1.5ms)
+Completed 200 OK in 126ms (Views: 120.3ms | ActiveRecord: 1.6ms)
+
+
+Started POST "/buys" for 127.0.0.1 at 2017-06-06 15:05:08 -0300
+Processing by BuysController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"EkxI3ApPtzEKMcBLasxcoDT1S8UCYPI5danodyid2ax2as50tbqKLa27GNgBxnn4fCWuMYJa0yp9729ekCudxQ==", "buy"=>{"cantidad"=>"1", "numero_de_tarjeta"=>"111"}, "commit"=>"Realizar Compra"}
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCard Load (2.8ms)[0m  [1m[34mSELECT  `cards`.* FROM `cards` WHERE `cards`.`numero` = 111 LIMIT 1[0m
+Redirected to http://localhost:3000/buys/new
+Completed 302 Found in 17ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/buys/new" for 127.0.0.1 at 2017-06-06 15:05:08 -0300
+Processing by BuysController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering buys/new.html.erb within layouts/application
+  Rendered buys/_form.html.erb (3.3ms)
+  Rendered buys/new.html.erb within layouts/application (5.8ms)
+  Rendered menu/_menu.html.erb (1.6ms)
+Completed 200 OK in 123ms (Views: 115.3ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/buys" for 127.0.0.1 at 2017-06-06 15:05:19 -0300
+Processing by BuysController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"nj2GMik2e7BMywfdSrakVtHeZNJMX70kONxfDYZuz0f6GwCalsNGrOtB304hvIEOmQ6BJsxlnDcwmtgkPtiLLg==", "buy"=>{"cantidad"=>"1", "numero_de_tarjeta"=>"222"}, "commit"=>"Realizar Compra"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCard Load (0.6ms)[0m  [1m[34mSELECT  `cards`.* FROM `cards` WHERE `cards`.`numero` = 222 LIMIT 1[0m
+Redirected to http://localhost:3000/buys/new
+Completed 302 Found in 32ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/buys/new" for 127.0.0.1 at 2017-06-06 15:05:19 -0300
+Processing by BuysController#new as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering buys/new.html.erb within layouts/application
+  Rendered buys/_form.html.erb (4.1ms)
+  Rendered buys/new.html.erb within layouts/application (5.9ms)
+  Rendered menu/_menu.html.erb (1.5ms)
+Completed 200 OK in 145ms (Views: 138.4ms | ActiveRecord: 1.0ms)
+
+
+  [1m[36mCard Load (0.6ms)[0m  [1m[34mSELECT  `cards`.* FROM `cards` ORDER BY `cards`.`id` ASC LIMIT 1[0m
+  [1m[36mCard Load (0.7ms)[0m  [1m[34mSELECT  `cards`.* FROM `cards` ORDER BY `cards`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCard Load (0.6ms)[0m  [1m[34mSELECT  `cards`.* FROM `cards` ORDER BY `cards`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE `cards` SET `credito` = 1000.0, `updated_at` = '2017-06-06 18:07:45' WHERE `cards`.`id` = 1[0m
+  [1m[35m (64.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mCard Load (0.5ms)[0m  [1m[34mSELECT  `cards`.* FROM `cards` ORDER BY `cards`.`id` ASC LIMIT 1[0m
+Started POST "/buys" for 127.0.0.1 at 2017-06-06 15:07:59 -0300
+Processing by BuysController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Tr7E+hXXRNBDlQkhubQ6XByJtBBzP5x3PbJEUHEbVJ4qmEJSqiJ5zOQf0bLSvh8EVFlR5PMFvWQ19MN5ya0Q9w==", "buy"=>{"cantidad"=>"2", "numero_de_tarjeta"=>"111"}, "commit"=>"Realizar Compra"}
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mCard Load (1.0ms)[0m  [1m[34mSELECT  `cards`.* FROM `cards` WHERE `cards`.`numero` = 111 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mSQL (64.0ms)[0m  [1m[32mINSERT INTO `buys` (`cantidad`, `precio_total`, `precio_actual`, `created_at`, `updated_at`, `user_id`, `numero_de_tarjeta`) VALUES (2, 100.0, 50.0, '2017-06-06 18:07:59', '2017-06-06 18:07:59', 1, 111)[0m
+  [1m[35m (75.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE `users` SET `creditos` = 2, `updated_at` = '2017-06-06 18:07:59' WHERE `users`.`id` = 1[0m
+  [1m[35m (49.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.5ms)[0m  [1m[33mUPDATE `cards` SET `credito` = 900.0, `updated_at` = '2017-06-06 18:07:59' WHERE `cards`.`id` = 1[0m
+  [1m[35m (50.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/buys/7
+Completed 302 Found in 277ms (ActiveRecord: 244.9ms)
+
+
+Started GET "/buys/7" for 127.0.0.1 at 2017-06-06 15:07:59 -0300
+Processing by BuysController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mBuy Load (0.5ms)[0m  [1m[34mSELECT  `buys`.* FROM `buys` WHERE `buys`.`id` = 7 LIMIT 1[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering buys/show.html.erb within layouts/application
+  Rendered buys/show.html.erb within layouts/application (1.0ms)
+  Rendered menu/_menu.html.erb (1.5ms)
+Completed 200 OK in 147ms (Views: 139.7ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/gauchadas/new" for 127.0.0.1 at 2017-06-06 15:08:12 -0300
+Processing by GauchadasController#new as HTML
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering gauchadas/new.html.erb within layouts/application
+  Rendered gauchadas/_form.html.erb (38.3ms)
+  Rendered gauchadas/new.html.erb within layouts/application (58.7ms)
+  Rendered menu/_menu.html.erb (1.5ms)
+Completed 200 OK in 172ms (Views: 162.3ms | ActiveRecord: 2.2ms)
+
+
+Started DELETE "/users/sign_out" for 127.0.0.1 at 2017-06-06 15:08:25 -0300
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"9dySHrZ2tz8RpcgZL0rWAHF5vZvLARX2qtRHE6YLUiaR+hS2CYOKI7YvEIpEQPNYOalYb0s7NOWiksA6Hr0WTw=="}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 49ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-06 15:08:25 -0300
+Processing by IndexController#index as HTML
+  Rendering index/index.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM `gauchadas`[0m
+  [1m[36mGauchada Load (0.5ms)[0m  [1m[34mSELECT `gauchadas`.* FROM `gauchadas`[0m
+  Rendered postularse/_show.html.erb (0.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered gauchadas/_show_all_gauchadas.html.erb (38.1ms)
+  Rendered index/index.html.erb within layouts/application (39.9ms)
+  Rendered menu/_menu.html.erb (1.5ms)
+Completed 200 OK in 182ms (Views: 177.9ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/buys/new" for 127.0.0.1 at 2017-06-06 15:08:31 -0300
+Processing by BuysController#new as HTML
+Completed 401 Unauthorized in 6ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-06-06 15:08:32 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (7.1ms)
+  Rendered menu/_menu.html.erb (1.7ms)
+Completed 200 OK in 114ms (Views: 112.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/buys/assets/avatar.png" for 127.0.0.1 at 2017-06-06 15:08:32 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/buys/assets/avatar.png"):
+  
+actionpack (5.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.3) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered collection of /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb [44 times] (27.4ms)
+  Rendered /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.7ms)
+  Rendering /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (67.4ms)
+Started POST "/users/sign_in" for 127.0.0.1 at 2017-06-06 15:08:37 -0300
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"B/b1+UE+0m4FH5eXmdbuytCsHbVihV7mizJacDm2ao3kQsuIkNfx67FuJwMqZKy9Oa4lRjSMMgDv4R1F9+fzKw==", "user"=>{"email"=>"admin@admin.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Iniciar Sesión"}
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'admin@admin.com' ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE `users` SET `current_sign_in_at` = '2017-06-06 18:08:37', `last_sign_in_at` = '2017-06-06 17:28:44', `sign_in_count` = 44, `updated_at` = '2017-06-06 18:08:37' WHERE `users`.`id` = 1[0m
+  [1m[35m (54.5ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/buys/new
+Completed 302 Found in 272ms (ActiveRecord: 58.7ms)
+
+
+Started GET "/buys/new" for 127.0.0.1 at 2017-06-06 15:08:37 -0300
+Processing by BuysController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering buys/new.html.erb within layouts/application
+  Rendered buys/_form.html.erb (6.4ms)
+  Rendered buys/new.html.erb within layouts/application (8.2ms)
+  Rendered menu/_menu.html.erb (1.8ms)
+Completed 200 OK in 146ms (Views: 142.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-06 15:08:43 -0300
+Processing by IndexController#index as HTML
+  Rendering index/index.html.erb within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `gauchadas`[0m
+  [1m[36mGauchada Load (0.7ms)[0m  [1m[34mSELECT `gauchadas`.* FROM `gauchadas`[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  Rendered gauchadas/_show_all_gauchadas.html.erb (54.4ms)
+  Rendered index/index.html.erb within layouts/application (56.3ms)
+  Rendered menu/_menu.html.erb (1.5ms)
+Completed 200 OK in 172ms (Views: 167.0ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-06 15:12:55 -0300
+Processing by IndexController#index as HTML
+  Rendering index/index.html.erb within layouts/application
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM `gauchadas`[0m
+  [1m[36mGauchada Load (0.5ms)[0m  [1m[34mSELECT `gauchadas`.* FROM `gauchadas`[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  Rendered gauchadas/_show_all_gauchadas.html.erb (38.4ms)
+  Rendered index/index.html.erb within layouts/application (40.2ms)
+  Rendered menu/_menu.html.erb (1.7ms)
+Completed 200 OK in 198ms (Views: 192.5ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-06 15:20:32 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at /home/eze/sitiosEze/gauchada.com/gauchada.com/unagauchada/app/controllers/application_controller.rb:4)
+Processing by IndexController#index as HTML
+  Rendering index/index.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM `gauchadas`[0m
+  [1m[36mGauchada Load (0.8ms)[0m  [1m[34mSELECT `gauchadas`.* FROM `gauchadas`[0m
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  Rendered gauchadas/_show_all_gauchadas.html.erb (174.1ms)
+  Rendered index/index.html.erb within layouts/application (178.0ms)
+  Rendered menu/_menu.html.erb (1.6ms)
+Completed 200 OK in 1002ms (Views: 910.8ms | ActiveRecord: 9.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-06 15:20:46 -0300
+Processing by IndexController#index as HTML
+  Rendering index/index.html.erb within layouts/application
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT COUNT(*) FROM `gauchadas`[0m
+  [1m[36mGauchada Load (0.6ms)[0m  [1m[34mSELECT `gauchadas`.* FROM `gauchadas`[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.6ms)
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  Rendered gauchadas/_show_all_gauchadas.html.erb (52.6ms)
+  Rendered index/index.html.erb within layouts/application (54.5ms)
+  Rendered menu/_menu.html.erb (1.8ms)
+Completed 200 OK in 171ms (Views: 165.3ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-06 16:26:29 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (107.3ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at /home/eze/sitiosEze/gauchada.com/gauchada.com/unagauchada/app/controllers/application_controller.rb:4)
+Processing by IndexController#index as HTML
+  Rendering index/index.html.erb within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `gauchadas`[0m
+  [1m[36mGauchada Load (0.6ms)[0m  [1m[34mSELECT `gauchadas`.* FROM `gauchadas`[0m
+  Rendered postularse/_show.html.erb (0.6ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered gauchadas/_show_all_gauchadas.html.erb (170.9ms)
+  Rendered index/index.html.erb within layouts/application (181.3ms)
+  Rendered menu/_menu.html.erb (1.7ms)
+Completed 200 OK in 1158ms (Views: 1057.4ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2017-06-06 16:26:36 -0300
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (2.0ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (178.5ms)
+  Rendered menu/_menu.html.erb (1.8ms)
+Completed 200 OK in 293ms (Views: 285.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/assets/avatar.png" for 127.0.0.1 at 2017-06-06 16:26:37 -0300
+  
+ActionController::RoutingError (No route matches [GET] "/users/assets/avatar.png"):
+  
+actionpack (5.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.3) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendering /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered collection of /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb [44 times] (61.3ms)
+  Rendered /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.4ms)
+  Rendering /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (115.1ms)
+Started GET "/" for 127.0.0.1 at 2017-06-06 16:29:00 -0300
+Processing by IndexController#index as HTML
+  Rendering index/index.html.erb within layouts/application
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT COUNT(*) FROM `gauchadas`[0m
+  [1m[36mGauchada Load (11.2ms)[0m  [1m[34mSELECT `gauchadas`.* FROM `gauchadas`[0m
+  Rendered postularse/_show.html.erb (1.7ms)
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (7.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+Started GET "/users/assets/avatar.png" for 127.0.0.1 at 2017-06-06 16:29:00 -0300
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  
+ActionController::RoutingError (No route matches [GET] "/users/assets/avatar.png"):
+  
+actionpack (5.0.3) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.3) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.3) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.3) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.3) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.3) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.3) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.3) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.3) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.3) lib/rails/engine.rb:522:in `call'
+puma (3.8.2) lib/puma/configuration.rb:224:in `call'
+puma (3.8.2) lib/puma/server.rb:600:in `handle_request'
+puma (3.8.2) lib/puma/server.rb:435:in `process_client'
+puma (3.8.2) lib/puma/server.rb:299:in `block in run'
+puma (3.8.2) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered gauchadas/_show_all_gauchadas.html.erb (173.9ms)
+  Rendered index/index.html.erb within layouts/application (177.0ms)
+  Rendering /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout
+  Rendering /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered collection of /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/routes/_route.html.erb [44 times] (28.7ms)
+  Rendered /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.3ms)
+  Rendering /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /home/eze/.rbenv/versions/2.4.0/lib/ruby/gems/2.4.0/gems/actionpack-5.0.3/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (158.1ms)
+  Rendered menu/_menu.html.erb (1.8ms)
+Completed 200 OK in 487ms (Views: 468.1ms | ActiveRecord: 16.9ms)
+
+

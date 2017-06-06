@@ -34,7 +34,7 @@ color: #f27321;
 	background-color:  #f27321 !important ;
 }
 
-.link_gauchadas{
+.link_gauchadas, .btn{
 	clear: both;
 	display: inline-block;
 	color: #fff !important ;
@@ -47,7 +47,7 @@ color: #f27321;
     min-width: 7% !important;
 }
 
-.link_gauchadas:hover{
+.link_gauchadas:hover, .btn:hover{
 	background-color:  rgba(0, 0, 0, 0.76)	 !important;
 	color: #f27321 !important ;
 }
