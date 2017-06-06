@@ -11,7 +11,7 @@ class Gauchada < ApplicationRecord
   			  where('title LIKE ?', "%#{search}%")
 
   		else
-    		scoped
+    		
   		end
 
 	end

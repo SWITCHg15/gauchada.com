@@ -3,28 +3,47 @@
   <label for="s">
     <i class="icon-search"></i>
   </label>
-  <input type="text" value="" placeholder="Buscar" class="" name="searchbox" id="s" />
+  <input type="text" value="<%=@busqueda%>" placeholder="Buscar" class="" name="searchbox" id="s" />
 
 </form>
 </div>
   <% if @gauchadas.empty?%>
   <%= "acomodame q me veo feo" %>
   <%end%>
-
+      
       <form action="/gauchadas" method="get"> 
+        <SELECT NAME="selecion">
+        <%if @selecion=="title" %> 
+           <OPTION VALUE="title"selected>Titulo</OPTION> 
+        <%else%>
+           <OPTION VALUE="title">Titulo</OPTION>
+          <%end%>
+        <%if @selecion=="cant_postulantes" %>
+           <OPTION VALUE="cant_postulantes"selected>Postulante</OPTION>
+        <%else%>
+           <OPTION VALUE="cant_postulantes">Postulante</OPTION>
+           <%end%>
+        <%if @selecion=="created_at"%> 
+           <OPTION VALUE="created_at"selected>Cronologicamente</OPTION>
+           <%else%>
+             <OPTION VALUE="created_at">Cronologicamente</OPTION>
+           <%end%>
+        </SELECT>
         <BR><BR> 
-        <SELECT NAME="Titulo" SIZE="1"> 
-           <OPTION VALUE="ASC">Asc</OPTION> 
-           <OPTION VALUE="DESC">Desc</OPTION> 
+        <SELECT NAME="opcion" SIZE="1">
+          <%if @order=="ASC" %>
+           <OPTION VALUE="ASC"selected>Asc</OPTION> 
+           <%else%>
+            <OPTION VALUE="ASC">Asc</OPTION> 
+            <%end%>
+          <%if @order=="DESC"%>
+           <OPTION VALUE="DESC"selected>Desc</OPTION> 
+           <%else%>
+           <OPTION VALUE="DESC">Desc</OPTION>
+           <%end%>
+
         </SELECT> 
-        <SELECT NAME="postulantes" SIZE="1"> 
-          <OPTION VALUE="ASC">Asc</OPTION> 
-          <OPTION VALUE="DESC">Desc</OPTION> 
-        </SELECT> 
-        <SELECT NAME="actualizacion" SIZE="1"> 
-           <OPTION VALUE="ASC">Asc</OPTION> 
-           <OPTION VALUE="DESC">Desc</OPTION> 
-        </SELECT> 
+        <input type="hidden" name="searchbox" value="<%=@busqueda%>">
         <input TYPE="submit">
        </form>
 
