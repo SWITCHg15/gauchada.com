@@ -74,7 +74,7 @@
   def update
     respond_to do |format|
       if @gauchada.update(gauchada_params)
-        format.html { redirect_to @gauchada, notice: 'Gauchada was successfully updated.' }
+        format.html { redirect_to @gauchada, notice: 'Gauchada acutalizada correctamente.' }
         format.json { render :show, status: :ok, location: @gauchada }
       else
         format.html { render :edit }
@@ -96,7 +96,7 @@
       @user.save
       @gauchada.destroy
       respond_to do |format|
-        format.html { redirect_to gauchadas_url, notice: 'Gauchada was successfully destroyed.' }
+        format.html { redirect_to gauchadas_url, notice: 'Gauchada eliminada.' }
         format.json { head :no_content }
       end
     end

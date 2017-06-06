@@ -33,7 +33,7 @@ before_action :authenticate_user!
     @postularse.save
 	respond_to do |format|
 	  if @postularse.save
-	    format.html { redirect_to @gauchada, notice: 'Postularse Creada con éxito.' }
+	    format.html { redirect_to @gauchada, notice: 'Ud se ha postulado correctamente.' }
 	  else
 	    format.html { render :new }
 	    format.json { render json: @postularse.errors, status: :unprocessable_entity }

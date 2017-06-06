@@ -5,12 +5,14 @@
 	margin: 0px;
 	padding: 0px;
 }
+
 #portada{
 	background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1R6r1K4D6aOHrBnErUXtJdeyntw6925wyNDdtA6q6aBBtWl5yeg");
 	background-size:100%;
 	background-repeat: no-repeat;
-
-
+}
+#titulo_inicio{
+	text-align: center;
 }
 #portada img{
 	width: 100%
@@ -61,4 +63,11 @@ footer { text-align: center;
 
 footer img { float: center; 
              position: relative; 
-             margin-top: -4.2em}
+             margin-top: -4.2em
+}
+.filters{
+	margin-bottom: 5%;
+}
+.contenedor_guchada{
+	clear: both;
+}

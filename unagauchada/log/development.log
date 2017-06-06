@@ -1,3 +1,63 @@
+<<<<<<< HEAD
+Started GET "/buys/new" for 127.0.0.1 at 2017-06-05 23:57:35 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (11.2ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at /home/eze/sitiosEze/gauchada.com/gauchada.com/unagauchada/app/controllers/application_controller.rb:4)
+Processing by BuysController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendering buys/new.html.erb within layouts/application
+  Rendered buys/_form.html.erb (140.4ms)
+  Rendered buys/new.html.erb within layouts/application (150.2ms)
+  Rendered menu/_menu.html.erb (2.4ms)
+Completed 200 OK in 9994ms (Views: 9835.0ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-05 23:57:52 -0300
+Processing by IndexController#index as HTML
+  Rendering index/index.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM `gauchadas`[0m
+  [1m[36mGauchada Load (0.5ms)[0m  [1m[34mSELECT `gauchadas`.* FROM `gauchadas`[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  Rendered gauchadas/_show_all_gauchadas.html.erb (118.7ms)
+  Rendered index/index.html.erb within layouts/application (121.0ms)
+  Rendered menu/_menu.html.erb (1.6ms)
+Completed 200 OK in 258ms (Views: 216.2ms | ActiveRecord: 4.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-06-05 23:57:53 -0300
+Processing by IndexController#index as HTML
+  Rendering index/index.html.erb within layouts/application
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM `gauchadas`[0m
+  [1m[36mGauchada Load (1.0ms)[0m  [1m[34mSELECT `gauchadas`.* FROM `gauchadas`[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m  [["id", 2], ["LIMIT", 1]]
+  Rendered postularse/_show.html.erb (0.1ms)
+  Rendered gauchadas/_show_all_gauchadas.html.erb (63.0ms)
+  Rendered index/index.html.erb within layouts/application (65.2ms)
+  Rendered menu/_menu.html.erb (1.7ms)
+Completed 200 OK in 172ms (Views: 165.8ms | ActiveRecord: 3.9ms)
+=======
 Started GET "/" for 127.0.0.1 at 2017-06-05 22:29:51 -0300
   [1m[36mActiveRecord::SchemaMigration Load (39.9ms)[0m  [1m[34mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
 DEPRECATION WARNING: before_filter is deprecated and will be removed in Rails 5.1. Use before_action instead. (called from <class:ApplicationController> at /home/agustin/gauchada.com/unagauchada/app/controllers/application_controller.rb:4)
@@ -7635,6 +7695,7 @@ Processing by GauchadasController#index as HTML
   Rendered gauchadas/index.html.erb within layouts/application (14.5ms)
   Rendered menu/_menu.html.erb (1.2ms)
 Completed 200 OK in 96ms (Views: 93.1ms | ActiveRecord: 1.3ms)
+>>>>>>> c5aa8ef6c8653e7312828b17544533456d935e88
 
 
 Started GET "/" for 127.0.0.1 at 2017-06-06 00:10:09 -0300
