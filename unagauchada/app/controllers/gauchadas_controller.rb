@@ -6,15 +6,19 @@
   
   def index
     @busqueda=params[:searchbox]
-    @titulo=params[:titulo]
-    @postulante=params[:postulantes]
-    @actualizacion=params[:actualizacion]
-
-    if @busqueda
-      @gauchadas= Gauchada.search(@busqueda)
-
-    elsif @titulo 
-      @gauchadas= Gauchada.search(@busqueda).order("title DESC")
+    @selecion=params[:selecion]
+    @order=params[:opcion]
+    @opcion="#{@selecion} #{params[:opcion]}"
+    
+    
+    if @busqueda and @selecion
+      @gauchadas= Gauchada.search(@busqueda).order(@opcion)
+      
+    elsif @selecion
+      @gauchadas= Gauchada.order(@opcion)
+      
+    elsif @busqueda
+        @gauchadas= Gauchada.search(@busqueda)
     else
       @gauchadas= Gauchada.all
     end
