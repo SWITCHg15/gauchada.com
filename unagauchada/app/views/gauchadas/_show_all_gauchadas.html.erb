@@ -1,15 +1,32 @@
-<div id="container" style="display: none">
+<div id="container" >
 <form role="search" method="get" id="searchform" action="/gauchadas" >
   <label for="s">
     <i class="icon-search"></i>
   </label>
-  <input type="text" value="" placeholder="buscar" class="" name="buscar" id="s" />
+  <input type="text" value="" placeholder="Buscar" class="" name="searchbox" id="s" />
+
 </form>
 </div>
-<article class="lista_gacuchadas">
-   <!-- <%= link_to 'Ordenar por titulo', 'gauchadas/show_all_gauchadas'%>
-    <%= link_to 'Ordenar cronolgimente', 'gauchadas/show_all_gauchadas' %>
-    <%= link_to 'Ordenar cantidad postulantes', 'gauchadas/show_all_gauchadas' %> -->
+  <% if @gauchadas.empty?%>
+  <%= "acomodame q me veo feo" %>
+  <%end%>
+
+      <form action="/gauchadas" method="get"> 
+        <BR><BR> 
+        <SELECT NAME="Titulo" SIZE="1"> 
+           <OPTION VALUE="ASC">Asc</OPTION> 
+           <OPTION VALUE="DESC">Desc</OPTION> 
+        </SELECT> 
+        <SELECT NAME="postulantes" SIZE="1"> 
+          <OPTION VALUE="ASC">Asc</OPTION> 
+          <OPTION VALUE="DESC">Desc</OPTION> 
+        </SELECT> 
+        <SELECT NAME="actualizacion" SIZE="1"> 
+           <OPTION VALUE="ASC">Asc</OPTION> 
+           <OPTION VALUE="DESC">Desc</OPTION> 
+        </SELECT> 
+        <input TYPE="submit">
+       </form>
 
     <% @gauchadas.each do |gauchada| %>
     <div class="contenedor_guchada">

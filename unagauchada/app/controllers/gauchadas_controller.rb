@@ -3,14 +3,23 @@
   before_action :authenticate_user!, except: [:index,:show]
   # GET /gauchadas
   # GET /gauchadas.json
+  
   def index
-    @keyword = params[:buscar]
-    if @keyword
-      @gauchadas=Gauchada.where("titulo LIKE (?)", "%#{@keyword}%") 
+    @busqueda=params[:searchbox]
+    @titulo=params[:titulo]
+    @postulante=params[:postulantes]
+    @actualizacion=params[:actualizacion]
+
+    if @busqueda
+      @gauchadas= Gauchada.search(@busqueda)
+
+    elsif @titulo 
+      @gauchadas= Gauchada.search(@busqueda).order("title DESC")
     else
-    @gauchadas = Gauchada.all
+      @gauchadas= Gauchada.all
     end
   end
+
 
   # GET /gauchadas/1
   # GET /gauchadas/1.json
