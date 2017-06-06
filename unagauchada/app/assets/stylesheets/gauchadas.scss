@@ -26,8 +26,15 @@ color: #f27321;
 	text-align: right;
 	
 }
-.by_autor a, .link_gauchadas{
-	color: #f27321 !important;
+.by_autor a{
+ color: #f27321 !important ;
+}
+.link_gauchadas{
+	clear: both;
+	color: #fff !important ;
+	margin:1%;
+	padding: 1%;
+	background-color: #f27321 !important ;
 }
 .contenedor_guchada{
 	border: solid 1px #ccc ;
@@ -65,3 +72,20 @@ color: #f27321;
 .autor_gauchada{
 	text-align: right;
 }
+p.descripcion_gauchadas {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+/*p.descripcion_gauchadas {
+    
+    overflow: hidden !important;
+    
+    line-height: 1.8em !important;
+    max-height: 3;
+    
+    max-height: 5.6em !important;
+    text-overflow: ellipsis;
+    line-height: 1.8em;
+    word-wrap: break-word;
+} */
